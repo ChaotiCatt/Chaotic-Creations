@@ -1,0 +1,619 @@
+{
+  "id_map": {},
+  "mod_elements": [
+    {
+      "name": "Trust",
+      "type": "tool",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trust"
+    },
+    {
+      "name": "TrustLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trust_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TrustToolInHandTick",
+      "type": "procedure",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trust_tool_in_hand_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ChaoticCreations",
+      "type": "tab",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chaotic_creations"
+    },
+    {
+      "name": "SerpentsWrath",
+      "type": "tool",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_wrath"
+    },
+    {
+      "name": "SerpentsWrathLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_wrath_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EternalFlameShockwaveBulletHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternal_flame_shockwave_bullet_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "E1",
+      "type": "item",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "e_1"
+    },
+    {
+      "name": "EternalFlameShockwave",
+      "type": "gun",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternal_flame_shockwave"
+    },
+    {
+      "name": "EternalFlameRightClickedInAir",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternal_flame_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EternalFlame",
+      "type": "tool",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternal_flame"
+    },
+    {
+      "name": "CumbustionVulpineWorldWideWebBrowser",
+      "type": "tool",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cumbustion_vulpine_world_wide_web_browser"
+    },
+    {
+      "name": "EternalFlameLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternal_flame_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RedstoneConduitOnPotionActiveTick",
+      "type": "procedure",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redstone_conduit_on_potion_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RedstoneConduit",
+      "type": "potion",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redstone_conduit"
+    },
+    {
+      "name": "RedstoneVortexOnPotionActiveTick",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redstone_vortex_on_potion_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RedstoneVortex",
+      "type": "potion",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redstone_vortex"
+    },
+    {
+      "name": "ChaoticCluster",
+      "type": "block",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chaotic_cluster"
+    },
+    {
+      "name": "BlockChaoticCluster",
+      "type": "loottable",
+      "sortid": 15,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "block_chaotic_cluster"
+    },
+    {
+      "name": "ChaoticEnergy",
+      "type": "item",
+      "sortid": 16,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chaotic_energy"
+    },
+    {
+      "name": "ChaotiCattsHandCannonBulletHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chaoti_catts_hand_cannon_bullet_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ChaotiCattsHandCannonRangedItemUsed",
+      "type": "procedure",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chaoti_catts_hand_cannon_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TheClaw",
+      "type": "gun",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "the_claw"
+    },
+    {
+      "name": "Magnumrounds",
+      "type": "item",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "magnumrounds"
+    },
+    {
+      "name": "TheViperBulletHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "the_viper_bullet_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TheViperRangedItemUsed",
+      "type": "procedure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "the_viper_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TheViper",
+      "type": "gun",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "the_viper"
+    },
+    {
+      "name": "Magnumroundsrecipie",
+      "type": "recipe",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "magnumroundsrecipie"
+    },
+    {
+      "name": "InfernalsVenganceBulletHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infernals_vengance_bullet_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "InfernalsVengance",
+      "type": "gun",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infernals_vengance"
+    },
+    {
+      "name": "InfernalsVenganceRangedItemUsed",
+      "type": "procedure",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infernals_vengance_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FoodBar",
+      "type": "food",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "food_bar"
+    },
+    {
+      "name": "FoodBarrecipie",
+      "type": "recipe",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "food_barrecipie"
+    },
+    {
+      "name": "CombatKnife",
+      "type": "tool",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "combat_knife"
+    },
+    {
+      "name": "MiningBeamLaserBulletHitsBlock",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_beam_laser_bullet_hits_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MiningBeamLaser",
+      "type": "gun",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_beam_laser"
+    },
+    {
+      "name": "MiningBeamRightClickedInAir",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_beam_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MiningBeam",
+      "type": "tool",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_beam"
+    },
+    {
+      "name": "MiningBeamrecipe",
+      "type": "recipe",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mining_beamrecipe"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "item.minecraft.lingering_potion.effect.redstone_conduit": "Lingering Redstone Conduit",
+      "item.chaotic_creations.trust": "Trust",
+      "item.chaotic_creations.e_1": "E 1",
+      "item.chaotic_creations.eternal_flame": "Eternal Flame",
+      "item.chaotic_creations.chaotic_energy": "Chaotic Energy",
+      "item.minecraft.splash_potion.effect.redstone_vortex": "Splash Redstone Vortex",
+      "effect.redstone_conduit": "Redstone Conduit",
+      "item.minecraft.tipped_arrow.effect.redstone_vortex": "Arrow of Redstone Vortex",
+      "item.minecraft.lingering_potion.effect.redstone_vortex": "Lingering Redstone Vortex",
+      "item.minecraft.tipped_arrow.effect.redstone_conduit": "Arrow of Redstone Conduit",
+      "item.chaotic_creations.the_viper": "The Viper",
+      "item.chaotic_creations.the_claw": "The Claw",
+      "block.chaotic_creations.chaotic_cluster": "Chaotic Cluster",
+      "item.chaotic_creations.food_bar": "Food Bar",
+      "item.chaotic_creations.mining_beam": "Mining Beam",
+      "item.minecraft.potion.effect.redstone_conduit": "Redstone Conduit",
+      "item.minecraft.splash_potion.effect.redstone_conduit": "Splash Redstone Conduit",
+      "item.chaotic_creations.serpents_wrath": "Serpent\u0027s Wrath",
+      "itemGroup.tabchaotic_creations": "Chaotic Creations",
+      "item.chaotic_creations.infernals_vengance": "Infernals Vengance",
+      "item.chaotic_creations.mining_beam_laser": "Mining Beam Laser",
+      "item.chaotic_creations.eternal_flame_shockwave": "Eternal Flame Shockwave",
+      "effect.redstone_vortex": "Redstone Vortex",
+      "item.chaotic_creations.cumbustion_vulpine_world_wide_web_browser": "Combustion Vulpine World Wide Web Browser",
+      "item.minecraft.potion.effect.redstone_vortex": "Redstone Vortex",
+      "item.chaotic_creations.magnumrounds": ".500 Magnum",
+      "item.chaotic_creations.combat_knife": "Combat Knife"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": []
+  },
+  "workspaceSettings": {
+    "modid": "chaotic_creations",
+    "modName": "Chaotic Creations",
+    "version": "1.0.0",
+    "author": "kaiic, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.16.5",
+    "modElementsPackage": "net.mcreator.chaoticcreations",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202100116710
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "chaotic_creations:items/cumbustion_vulpine"
+  }
+}

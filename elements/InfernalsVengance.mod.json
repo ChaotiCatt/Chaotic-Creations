@@ -1,0 +1,48 @@
+{
+  "_fv": 18,
+  "_type": "gun",
+  "definition": {
+    "renderType": 0,
+    "texture": "infernals_vengance",
+    "customModelName": "Normal",
+    "name": "Infernals Vengance",
+    "specialInfo": [
+      "Representative of the anger of past users of the gun..."
+    ],
+    "creativeTab": {
+      "value": "CUSTOM:ChaoticCreations"
+    },
+    "stackSize": 1,
+    "ammoItem": {
+      "value": "CUSTOM:Magnumrounds"
+    },
+    "shootConstantly": false,
+    "usageCount": 100,
+    "actionSound": {
+      "value": "entity.ghast.shoot"
+    },
+    "hasGlow": false,
+    "animation": "bow",
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "onRangedItemUsed": {
+      "name": "InfernalsVenganceRangedItemUsed"
+    },
+    "bulletPower": 9.0,
+    "bulletDamage": 4.5,
+    "bulletKnockback": 5,
+    "bulletParticles": false,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": "Items.BLAZE_POWDER"
+    },
+    "bulletModel": "Default",
+    "customBulletModelTexture": "",
+    "onBulletHitsPlayer": {
+      "name": "InfernalsVenganceBulletHitsLivingEntity"
+    },
+    "onBulletHitsEntity": {
+      "name": "InfernalsVenganceBulletHitsLivingEntity"
+    }
+  }
+}
