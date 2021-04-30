@@ -3,9 +3,9 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "chaotic_energy",
+    "texture": "mastery_token",
     "customModelName": "Normal",
-    "name": "Chaotic Energy",
+    "name": "Mastery Token",
     "rarity": "EPIC",
     "creativeTab": {
       "value": "CUSTOM:ChaoticItems"
@@ -25,7 +25,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInfo": [
-      "Chaotic Energy is too strong with this object..."
+      "Maybe it does things when combined with rare items......."
     ],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",

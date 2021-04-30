@@ -18,11 +18,11 @@ import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 import java.util.List;
 
 @ChaoticCreationsModElements.ModElement.Tag
-public class ChaoticEnergyItem extends ChaoticCreationsModElements.ModElement {
-	@ObjectHolder("chaotic_creations:chaotic_energy")
+public class MasteryTokenItem extends ChaoticCreationsModElements.ModElement {
+	@ObjectHolder("chaotic_creations:mastery_token")
 	public static final Item block = null;
-	public ChaoticEnergyItem(ChaoticCreationsModElements instance) {
-		super(instance, 16);
+	public MasteryTokenItem(ChaoticCreationsModElements instance) {
+		super(instance, 37);
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class ChaoticEnergyItem extends ChaoticCreationsModElements.ModElement {
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ChaoticItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.EPIC));
-			setRegistryName("chaotic_energy");
+			setRegistryName("mastery_token");
 		}
 
 		@Override
@@ -53,7 +53,7 @@ public class ChaoticEnergyItem extends ChaoticCreationsModElements.ModElement {
 		@Override
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("Chaotic Energy is too strong with this object..."));
+			list.add(new StringTextComponent("Maybe it does things when combined with rare items......."));
 		}
 	}
 }

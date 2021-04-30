@@ -3,9 +3,9 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "chaotic_energy",
+    "texture": "purified_energy",
     "customModelName": "Normal",
-    "name": "Chaotic Energy",
+    "name": "Purified Energy",
     "rarity": "EPIC",
     "creativeTab": {
       "value": "CUSTOM:ChaoticItems"
@@ -24,9 +24,7 @@
     "damageOnCrafting": false,
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "specialInfo": [
-      "Chaotic Energy is too strong with this object..."
-    ],
+    "specialInfo": [],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,

@@ -568,6 +568,92 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "chaotic_items"
+    },
+    {
+      "name": "Quests",
+      "type": "gui",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "quests"
+    },
+    {
+      "name": "ChaoticPortal",
+      "type": "block",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chaotic_portal"
+    },
+    {
+      "name": "ChaoticPortalOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chaotic_portal_on_block_right_clicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PurifiedEnergy",
+      "type": "item",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "purified_energy"
+    },
+    {
+      "name": "MasteryToken",
+      "type": "item",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mastery_token"
+    },
+    {
+      "name": "P1",
+      "type": "procedure",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "p_1",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -576,6 +662,7 @@
     "en_us": {
       "item.minecraft.lingering_potion.effect.redstone_conduit": "Lingering Redstone Conduit",
       "item.chaotic_creations.trust": "Trust",
+      "item.chaotic_creations.purified_energy": "Purified Energy",
       "item.chaotic_creations.e_1": "E 1",
       "item.chaotic_creations.eternal_flame": "Eternal Flame",
       "item.chaotic_creations.chaotic_energy": "Chaotic Energy",
@@ -591,9 +678,11 @@
       "item.chaotic_creations.mining_beam": "Mining Beam",
       "item.minecraft.potion.effect.redstone_conduit": "Redstone Conduit",
       "item.minecraft.splash_potion.effect.redstone_conduit": "Splash Redstone Conduit",
+      "item.chaotic_creations.mastery_token": "Mastery Token",
       "item.chaotic_creations.serpents_wrath": "Serpent\u0027s Wrath",
       "itemGroup.tabchaotic_creations": "Chaotic Creations",
       "item.chaotic_creations.infernals_vengance": "Infernals Vengance",
+      "block.chaotic_creations.chaotic_portal": "Chaotic Portal",
       "item.chaotic_creations.mining_beam_laser": "Mining Beam Laser",
       "item.chaotic_creations.eternal_flame_shockwave": "Eternal Flame Shockwave",
       "effect.redstone_vortex": "Redstone Vortex",
@@ -618,9 +707,7 @@
     "license": "Academic Free License v3.0",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
-    "requiredMods": [
-      "Curios API"
-    ],
+    "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "chaotic_creations:blocks/chaotic_portal_top",
+    "particle": "chaotic_creations:blocks/chaotic_portal_top"
+  }
+}

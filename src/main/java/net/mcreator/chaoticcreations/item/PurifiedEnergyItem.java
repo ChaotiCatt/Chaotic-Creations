@@ -3,26 +3,20 @@ package net.mcreator.chaoticcreations.item;
 
 import net.minecraftforge.registries.ObjectHolder;
 
-import net.minecraft.world.World;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.chaoticcreations.itemgroup.ChaoticItemsItemGroup;
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 
-import java.util.List;
-
 @ChaoticCreationsModElements.ModElement.Tag
-public class ChaoticEnergyItem extends ChaoticCreationsModElements.ModElement {
-	@ObjectHolder("chaotic_creations:chaotic_energy")
+public class PurifiedEnergyItem extends ChaoticCreationsModElements.ModElement {
+	@ObjectHolder("chaotic_creations:purified_energy")
 	public static final Item block = null;
-	public ChaoticEnergyItem(ChaoticCreationsModElements instance) {
-		super(instance, 16);
+	public PurifiedEnergyItem(ChaoticCreationsModElements instance) {
+		super(instance, 36);
 	}
 
 	@Override
@@ -32,7 +26,7 @@ public class ChaoticEnergyItem extends ChaoticCreationsModElements.ModElement {
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ChaoticItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.EPIC));
-			setRegistryName("chaotic_energy");
+			setRegistryName("purified_energy");
 		}
 
 		@Override
@@ -48,12 +42,6 @@ public class ChaoticEnergyItem extends ChaoticCreationsModElements.ModElement {
 		@Override
 		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 			return 1F;
-		}
-
-		@Override
-		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
-			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("Chaotic Energy is too strong with this object..."));
 		}
 	}
 }

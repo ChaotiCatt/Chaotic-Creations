@@ -21,11 +21,5 @@ A mod that adds lots of cool gear and stuff.
     side="BOTH"
 
 
-[[dependencies.chaotic_creations]]
-    modId="Curios API"
-    mandatory=true
-    versionRange="[0,)"
-    ordering="NONE"
-    side="BOTH"
 
 
