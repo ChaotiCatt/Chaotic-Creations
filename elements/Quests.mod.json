@@ -50,6 +50,9 @@
         "type": "button",
         "data": {
           "text": "React",
+          "onClick": {
+            "name": "P1"
+          },
           "width": 50,
           "height": 20,
           "name": "React",
@@ -70,6 +73,19 @@
           "name": "Slot #2",
           "x": 272,
           "y": 69
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Chaotic Portal",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Chaotic Portal",
+          "x": 175,
+          "y": 39
         }
       }
     ]

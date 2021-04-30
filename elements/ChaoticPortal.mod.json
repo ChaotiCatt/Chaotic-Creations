@@ -72,7 +72,7 @@
     "reactionToPushing": "NORMAL",
     "isNotColidable": false,
     "soundOnStep": {
-      "value": "GROUND"
+      "value": "NETHERITE"
     },
     "luminance": 0,
     "unbreakable": false,
