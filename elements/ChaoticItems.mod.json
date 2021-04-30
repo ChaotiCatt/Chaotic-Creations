@@ -1,0 +1,11 @@
+{
+  "_fv": 18,
+  "_type": "tab",
+  "definition": {
+    "name": "Chaotic Items",
+    "icon": {
+      "value": "CUSTOM:ChaoticEnergy"
+    },
+    "showSearch": false
+  }
+}

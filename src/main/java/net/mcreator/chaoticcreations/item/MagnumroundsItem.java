@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.block.BlockState;
 
-import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
+import net.mcreator.chaoticcreations.itemgroup.ChaoticItemsItemGroup;
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 
 @ChaoticCreationsModElements.ModElement.Tag
@@ -25,7 +25,7 @@ public class MagnumroundsItem extends ChaoticCreationsModElements.ModElement {
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(ChaoticCreationsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
+			super(new Item.Properties().group(ChaoticItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("magnumrounds");
 		}
 

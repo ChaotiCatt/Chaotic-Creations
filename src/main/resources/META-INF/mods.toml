@@ -9,6 +9,9 @@ displayName="Chaotic Creations"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
 authors="kaiic, MCreator"
+description='''
+A mod that adds lots of cool gear and stuff.
+'''
 
 [[dependencies.chaotic_creations]]
     modId="minecraft"
@@ -18,5 +21,11 @@ authors="kaiic, MCreator"
     side="BOTH"
 
 
+[[dependencies.chaotic_creations]]
+    modId="Curios API"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 
 

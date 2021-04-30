@@ -559,6 +559,15 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "mining_beamrecipe"
+    },
+    {
+      "name": "ChaoticItems",
+      "type": "tab",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chaotic_items"
     }
   ],
   "variable_elements": [],
@@ -591,6 +600,7 @@
       "item.chaotic_creations.cumbustion_vulpine_world_wide_web_browser": "Combustion Vulpine World Wide Web Browser",
       "item.minecraft.potion.effect.redstone_vortex": "Redstone Vortex",
       "item.chaotic_creations.magnumrounds": ".500 Magnum",
+      "itemGroup.tabchaotic_items": "Chaotic Items",
       "item.chaotic_creations.combat_knife": "Combat Knife"
     }
   },
@@ -602,16 +612,20 @@
     "modid": "chaotic_creations",
     "modName": "Chaotic Creations",
     "version": "1.0.0",
+    "description": "A mod that adds lots of cool gear and stuff.",
     "author": "kaiic, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "Academic Free License v3.0",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
-    "requiredMods": [],
+    "requiredMods": [
+      "Curios API"
+    ],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.16.5",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.chaoticcreations",
     "lockBaseModFiles": false
   },
