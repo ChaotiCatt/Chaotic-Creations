@@ -681,6 +681,15 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "supply_pad"
+    },
+    {
+      "name": "Odin",
+      "type": "mob",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "odin"
     }
   ],
   "variable_elements": [],
@@ -689,10 +698,11 @@
     "en_us": {
       "item.minecraft.lingering_potion.effect.redstone_conduit": "Lingering Redstone Conduit",
       "item.chaotic_creations.trust": "Trust",
-      "item.chaotic_creations.purified_energy": "Purified Energy",
       "item.chaotic_creations.e_1": "E 1",
+      "item.chaotic_creations.purified_energy": "Purified Energy",
       "item.chaotic_creations.eternal_flame": "Eternal Flame",
       "item.chaotic_creations.chaotic_energy": "Chaotic Energy",
+      "item.chaotic_creations.odin_spawn_egg": "Odin Spawn Egg",
       "item.minecraft.splash_potion.effect.redstone_vortex": "Splash Redstone Vortex",
       "effect.redstone_conduit": "Redstone Conduit",
       "item.minecraft.tipped_arrow.effect.redstone_vortex": "Arrow of Redstone Vortex",
@@ -706,6 +716,7 @@
       "item.chaotic_creations.mining_beam": "Mining Beam",
       "item.minecraft.potion.effect.redstone_conduit": "Redstone Conduit",
       "item.minecraft.splash_potion.effect.redstone_conduit": "Splash Redstone Conduit",
+      "entity.chaotic_creations.odin": "Odin",
       "item.chaotic_creations.mastery_token": "Mastery Token",
       "item.chaotic_creations.serpents_wrath": "Serpent\u0027s Wrath",
       "itemGroup.tabchaotic_creations": "Chaotic Creations",
@@ -736,7 +747,9 @@
     "license": "Academic Free License v3.0",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
-    "requiredMods": [],
+    "requiredMods": [
+      "GeckoLib"
+    ],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],

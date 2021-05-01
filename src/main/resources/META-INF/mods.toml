@@ -21,5 +21,11 @@ A mod that adds lots of cool gear and stuff.
     side="BOTH"
 
 
+[[dependencies.chaotic_creations]]
+    modId="GeckoLib"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 
 
