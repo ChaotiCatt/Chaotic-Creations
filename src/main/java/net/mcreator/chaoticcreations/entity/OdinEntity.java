@@ -19,12 +19,14 @@ import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.passive.horse.LlamaEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.monster.SkeletonEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.RangedAttackGoal;
+import net.minecraft.entity.ai.goal.ReturnToVillageGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
+import net.minecraft.entity.ai.goal.OpenDoorGoal;
 import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
@@ -33,14 +35,13 @@ import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.MobEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
 
 import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
+import net.mcreator.chaoticcreations.item.OdinmainItem;
 import net.mcreator.chaoticcreations.item.OdinlightningattackItem;
 import net.mcreator.chaoticcreations.entity.renderer.OdinRenderer;
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
@@ -62,7 +63,7 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire().size(0.7999999999999999f, 2f))
 						.build("odin").setRegistryName("odin");
 		elements.entities.add(() -> entity);
-		elements.items.add(() -> new SpawnEggItem(entity, -7434610, -65536, new Item.Properties().group(ChaoticCreationsItemGroup.tab))
+		elements.items.add(() -> new SpawnEggItem(entity, -15263977, -65536, new Item.Properties().group(ChaoticCreationsItemGroup.tab))
 				.setRegistryName("odin_spawn_egg"));
 	}
 
@@ -82,7 +83,7 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 		}
 	}
 
-	public static class CustomEntity extends WolfEntity implements IRangedAttackMob {
+	public static class CustomEntity extends WolfEntity {
 		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
 			this(entity, world);
 		}
@@ -93,6 +94,9 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 			setNoAI(false);
 			setCustomName(new StringTextComponent("Odin, Wolf King"));
 			setCustomNameVisible(true);
+			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(OdinmainItem.block, (int) (1)));
+			this.setItemStackToSlot(EquipmentSlotType.OFFHAND, new ItemStack(OdinlightningattackItem.block, (int) (1)));
+			this.setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(Items.LEATHER_CHESTPLATE, (int) (1)));
 		}
 
 		@Override
@@ -111,12 +115,8 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 			this.goalSelector.addGoal(8, new LeapAtTargetGoal(this, (float) 0.5));
 			this.goalSelector.addGoal(9, new RandomWalkingGoal(this, 1));
 			this.targetSelector.addGoal(10, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
-			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
-				@Override
-				public boolean shouldContinueExecuting() {
-					return this.shouldExecute();
-				}
-			});
+			this.goalSelector.addGoal(12, new OpenDoorGoal(this, true));
+			this.goalSelector.addGoal(13, new ReturnToVillageGoal(this, 0.6, false));
 		}
 
 		@Override
@@ -141,7 +141,7 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 
 		@Override
 		public net.minecraft.util.SoundEvent getDeathSound() {
-			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.ender_dragon.growl"));
+			return (net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.wolf.death"));
 		}
 
 		@Override
@@ -161,10 +161,6 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 			if (source.getDamageType().equals("witherSkull"))
 				return false;
 			return super.attackEntityFrom(source, amount);
-		}
-
-		public void attackEntityWithRangedAttack(LivingEntity target, float flval) {
-			OdinlightningattackItem.shoot(this, target);
 		}
 
 		public void livingTick() {

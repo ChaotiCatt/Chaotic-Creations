@@ -720,6 +720,53 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "odinlightningattack"
+    },
+    {
+      "name": "OdinmainEntitySwingsItem",
+      "type": "procedure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "odinmain_entity_swings_item",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Odinmain",
+      "type": "tool",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "odinmain"
+    },
+    {
+      "name": "OdinmainLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "odinmain_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -732,6 +779,7 @@
       "item.chaotic_creations.e_1": "E 1",
       "item.chaotic_creations.eternal_flame": "Eternal Flame",
       "item.chaotic_creations.chaotic_energy": "Chaotic Energy",
+      "item.chaotic_creations.odinmain": "Odinmain",
       "item.chaotic_creations.odin_spawn_egg": "Odin Spawn Egg",
       "item.minecraft.splash_potion.effect.redstone_vortex": "Splash Redstone Vortex",
       "effect.redstone_conduit": "Redstone Conduit",
