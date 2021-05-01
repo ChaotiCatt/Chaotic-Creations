@@ -698,8 +698,8 @@
     "en_us": {
       "item.minecraft.lingering_potion.effect.redstone_conduit": "Lingering Redstone Conduit",
       "item.chaotic_creations.trust": "Trust",
-      "item.chaotic_creations.e_1": "E 1",
       "item.chaotic_creations.purified_energy": "Purified Energy",
+      "item.chaotic_creations.e_1": "E 1",
       "item.chaotic_creations.eternal_flame": "Eternal Flame",
       "item.chaotic_creations.chaotic_energy": "Chaotic Energy",
       "item.chaotic_creations.odin_spawn_egg": "Odin Spawn Egg",
@@ -748,7 +748,7 @@
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [
-      "GeckoLib"
+      "geckolib3"
     ],
     "dependencies": [],
     "dependants": [],

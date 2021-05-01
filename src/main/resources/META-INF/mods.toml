@@ -22,7 +22,7 @@ A mod that adds lots of cool gear and stuff.
 
 
 [[dependencies.chaotic_creations]]
-    modId="GeckoLib"
+    modId="geckolib3"
     mandatory=true
     versionRange="[0,)"
     ordering="NONE"
