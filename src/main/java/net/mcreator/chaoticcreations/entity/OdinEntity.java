@@ -20,24 +20,34 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.network.IPacket;
 import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
+import net.minecraft.entity.passive.horse.LlamaEntity;
+import net.minecraft.entity.passive.WolfEntity;
+import net.minecraft.entity.monster.SkeletonEntity;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
+import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
+import net.minecraft.entity.ai.goal.LeapAtTargetGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.CreatureEntity;
 import net.minecraft.entity.CreatureAttribute;
 
 import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
+import net.mcreator.chaoticcreations.item.OdinlightningattackItem;
 import net.mcreator.chaoticcreations.entity.renderer.OdinRenderer;
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 
@@ -86,7 +96,7 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 		}
 	}
 
-	public static class CustomEntity extends CreatureEntity {
+	public static class CustomEntity extends WolfEntity implements IRangedAttackMob {
 		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
 			this(entity, world);
 		}
@@ -107,16 +117,30 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
-			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, false));
-			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 1));
-			this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
-			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
-			this.goalSelector.addGoal(5, new SwimGoal(this));
+			this.goalSelector.addGoal(1, new SwimGoal(this));
+			this.goalSelector.addGoal(2, new LookRandomlyGoal(this));
+			this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, LlamaEntity.class, true, false));
+			this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, SkeletonEntity.class, true, false));
+			this.goalSelector.addGoal(7, new LeapAtTargetGoal(this, (float) 0.5));
+			this.goalSelector.addGoal(8, new MeleeAttackGoal(this, 1.2, true));
+			this.goalSelector.addGoal(9, new RandomWalkingGoal(this, 1));
+			this.targetSelector.addGoal(10, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
+			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
+				@Override
+				public boolean shouldContinueExecuting() {
+					return this.shouldExecute();
+				}
+			});
 		}
 
 		@Override
 		public CreatureAttribute getCreatureAttribute() {
 			return CreatureAttribute.UNDEFINED;
+		}
+
+		protected void dropSpecialItems(DamageSource source, int looting, boolean recentlyHitIn) {
+			super.dropSpecialItems(source, looting, recentlyHitIn);
+			this.entityDropItem(new ItemStack(Items.IRON_CHESTPLATE, (int) (1)));
 		}
 
 		@Override
@@ -151,6 +175,10 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 			if (source.getDamageType().equals("witherSkull"))
 				return false;
 			return super.attackEntityFrom(source, amount);
+		}
+
+		public void attackEntityWithRangedAttack(LivingEntity target, float flval) {
+			OdinlightningattackItem.shoot(this, target);
 		}
 
 		public void livingTick() {
