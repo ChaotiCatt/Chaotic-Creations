@@ -7,12 +7,8 @@ import net.minecraftforge.fml.network.FMLPlayMessages;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
-import net.minecraftforge.common.MinecraftForge;
 
-import net.minecraft.world.gen.Heightmap;
-import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.World;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.ResourceLocation;
@@ -26,7 +22,6 @@ import net.minecraft.item.Item;
 import net.minecraft.entity.passive.horse.LlamaEntity;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.monster.SkeletonEntity;
-import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
@@ -41,7 +36,6 @@ import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.IRangedAttackMob;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EntitySpawnPlacementRegistry;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
@@ -60,7 +54,6 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 		super(instance, 41);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new OdinRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
-		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	@Override
@@ -73,15 +66,8 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 				.setRegistryName("odin_spawn_egg"));
 	}
 
-	@SubscribeEvent
-	public void addFeatureToBiomes(BiomeLoadingEvent event) {
-		event.getSpawns().getSpawner(EntityClassification.MONSTER).add(new MobSpawnInfo.Spawners(entity, 20, 4, 4));
-	}
-
 	@Override
 	public void init(FMLCommonSetupEvent event) {
-		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
-				MonsterEntity::canMonsterSpawn);
 	}
 	private static class EntityAttributesRegisterHandler {
 		@SubscribeEvent
@@ -117,12 +103,12 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
-			this.goalSelector.addGoal(1, new SwimGoal(this));
-			this.goalSelector.addGoal(2, new LookRandomlyGoal(this));
-			this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, LlamaEntity.class, true, false));
-			this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, SkeletonEntity.class, true, false));
-			this.goalSelector.addGoal(7, new LeapAtTargetGoal(this, (float) 0.5));
-			this.goalSelector.addGoal(8, new MeleeAttackGoal(this, 1.2, true));
+			this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.2, true));
+			this.goalSelector.addGoal(2, new SwimGoal(this));
+			this.goalSelector.addGoal(3, new LookRandomlyGoal(this));
+			this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, LlamaEntity.class, true, false));
+			this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, SkeletonEntity.class, true, false));
+			this.goalSelector.addGoal(8, new LeapAtTargetGoal(this, (float) 0.5));
 			this.goalSelector.addGoal(9, new RandomWalkingGoal(this, 1));
 			this.targetSelector.addGoal(10, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
