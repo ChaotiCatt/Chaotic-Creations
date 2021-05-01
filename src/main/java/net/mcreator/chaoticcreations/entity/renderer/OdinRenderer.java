@@ -68,16 +68,21 @@ public class OdinRenderer {
 			cube_r2.setRotationPoint(1.0F, 10.5F, 7.0F);
 			head.addChild(cube_r2);
 			setRotationAngle(cube_r2, -1.4835F, 0.0F, 0.0F);
-			cube_r2.setTextureOffset(0, 55).addBox(-2.0F, 6.0F, -14.01F, 2.0F, 4.0F, 4.0F, 0.0F, false);
+			cube_r2.setTextureOffset(0, 55).addBox(-2.0F, 6.0F, -14.01F, 2.0F, 3.0F, 4.0F, 0.0F, false);
 			cube_r2.setTextureOffset(0, 55).addBox(-3.0F, 6.0F, -12.01F, 4.0F, 5.0F, 2.0F, 0.0F, false);
 			cube_r3 = new ModelRenderer(this);
 			cube_r3.setRotationPoint(1.0F, 10.5F, 7.0F);
 			head.addChild(cube_r3);
 			setRotationAngle(cube_r3, -1.1345F, 0.0F, 0.0F);
 			cube_r3.setTextureOffset(0, 55).addBox(-4.0F, -1.0F, -14.0F, 6.0F, 6.0F, 2.0F, 0.0F, false);
-			cube_r3.setTextureOffset(0, 55).addBox(2.0F, -1.0F, -16.0F, 1.0F, 5.0F, 4.0F, 0.0F, false);
-			cube_r3.setTextureOffset(0, 55).addBox(-5.0F, -1.0F, -16.0F, 1.0F, 5.0F, 4.0F, 0.0F, false);
-			cube_r3.setTextureOffset(0, 55).addBox(-4.0F, -1.0F, -16.5F, 6.0F, 5.0F, 1.0F, 0.0F, false);
+			cube_r3.setTextureOffset(0, 55).addBox(2.0F, -1.0F, -16.0F, 1.0F, 4.0F, 4.0F, 0.0F, false);
+			cube_r3.setTextureOffset(0, 55).addBox(-5.0F, -1.0F, -16.0F, 1.0F, 4.0F, 4.0F, 0.0F, false);
+			cube_r3.setTextureOffset(0, 50).addBox(0.0F, 2.0F, -18.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+			cube_r3.setTextureOffset(0, 50).addBox(-3.0F, 2.0F, -18.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+			cube_r3.setTextureOffset(0, 50).addBox(-3.0F, -1.0F, -18.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+			cube_r3.setTextureOffset(0, 50).addBox(0.0F, -1.0F, -18.5F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+			cube_r3.setTextureOffset(0, 50).addBox(-3.0F, -1.0F, -17.5F, 4.0F, 4.0F, 1.0F, 0.0F, false);
+			cube_r3.setTextureOffset(0, 55).addBox(-4.0F, -1.0F, -16.5F, 6.0F, 4.0F, 1.0F, 0.0F, false);
 			body = new ModelRenderer(this);
 			body.setRotationPoint(0.0F, 14.0F, 2.0F);
 			setRotationAngle(body, 1.5708F, 0.0F, 0.0F);
@@ -133,6 +138,8 @@ public class OdinRenderer {
 		}
 
 		public void setRotationAngles(Entity e, float f, float f1, float f2, float f3, float f4) {
+			this.head.rotateAngleY = f3 / (180F / (float) Math.PI);
+			this.head.rotateAngleX = f4 / (180F / (float) Math.PI);
 			this.leg0.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;
 			this.leg1.rotateAngleX = MathHelper.cos(f * 1.0F) * 1.0F * f1;
 			this.leg2.rotateAngleX = MathHelper.cos(f * 1.0F) * -1.0F * f1;

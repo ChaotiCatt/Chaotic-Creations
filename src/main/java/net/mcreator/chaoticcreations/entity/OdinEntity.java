@@ -42,7 +42,6 @@ import net.minecraft.entity.CreatureAttribute;
 
 import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
 import net.mcreator.chaoticcreations.item.OdinmainItem;
-import net.mcreator.chaoticcreations.item.OdinlightningattackItem;
 import net.mcreator.chaoticcreations.entity.renderer.OdinRenderer;
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 
@@ -95,7 +94,6 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 			setCustomName(new StringTextComponent("Odin, Wolf King"));
 			setCustomNameVisible(true);
 			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(OdinmainItem.block, (int) (1)));
-			this.setItemStackToSlot(EquipmentSlotType.OFFHAND, new ItemStack(OdinlightningattackItem.block, (int) (1)));
 			this.setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(Items.LEATHER_CHESTPLATE, (int) (1)));
 		}
 

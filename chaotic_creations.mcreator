@@ -767,6 +767,15 @@
           }
         ]
       }
+    },
+    {
+      "name": "Corruption",
+      "type": "biome",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "corruption"
     }
   ],
   "variable_elements": [],
@@ -809,6 +818,7 @@
       "item.chaotic_creations.magnumrounds": ".500 Magnum",
       "itemGroup.tabchaotic_items": "Chaotic Items",
       "block.chaotic_creations.supply_crate": "Supply Crate",
+      "biome.chaotic_creations.corruption": "Corruption",
       "item.chaotic_creations.combat_knife": "Combat Knife"
     }
   },
