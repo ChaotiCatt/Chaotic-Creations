@@ -5,7 +5,7 @@
     "mobName": "Odin",
     "mobLabel": "Odin, Wolf King",
     "mobModelName": "Modeldahw9iofn",
-    "mobModelTexture": "odintextures.png",
+    "mobModelTexture": "llas.png",
     "mobModelGlowTexture": "",
     "modelWidth": 0.7999999999999999,
     "modelHeight": 2.0,
@@ -13,11 +13,11 @@
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -15263977,
+      "value": -7500403,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -65536,
+      "value": -7680,
       "falpha": 0.0
     },
     "creativeTab": {

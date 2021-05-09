@@ -2,7 +2,7 @@
   "_fv": 18,
   "_type": "biome",
   "definition": {
-    "name": "Corruption",
+    "name": "Deep Corruption",
     "groundBlock": {
       "value": "Blocks.GRASS"
     },
@@ -10,36 +10,36 @@
       "value": "Blocks.STONE#0"
     },
     "airColor": {
-      "value": -65536,
+      "value": -15138816,
       "falpha": 0.0
     },
     "grassColor": {
-      "value": -4259840,
+      "value": -10092544,
       "falpha": 0.0
     },
     "foliageColor": {
-      "value": -6422528,
+      "value": -65536,
       "falpha": 0.0
     },
     "waterColor": {
-      "value": -13959168,
+      "value": -6750208,
       "falpha": 0.0
     },
     "waterFogColor": {
-      "value": -12189696,
+      "value": -65536,
       "falpha": 0.0
     },
     "ambientSound": {
-      "value": "ambient.crimson_forest.loop"
+      "value": ""
     },
     "additionsSound": {
-      "value": "ambient.soul_sand_valley.additions"
+      "value": ""
     },
     "music": {
-      "value": "music.nether"
+      "value": ""
     },
     "moodSound": {
-      "value": "ambient.cave"
+      "value": ""
     },
     "moodSoundDelay": 6000,
     "spawnParticles": true,
@@ -49,27 +49,27 @@
     "particlesProbability": 0.5,
     "biomeCategory": "NONE",
     "parent": {
-      "value": "CUSTOM:DeepCorruption"
+      "value": "No parent"
     },
     "rainingPossibility": 0.5,
     "temperature": 0.5,
     "baseHeight": 0.1,
-    "heightVariation": 0.2,
+    "heightVariation": 1.6,
     "biomeType": "WARM",
     "spawnBiome": true,
-    "biomeWeight": 9,
+    "biomeWeight": 10,
     "biomeDictionaryTypes": [],
     "grassPerChunk": 4,
     "seagrassPerChunk": 0,
-    "flowersPerChunk": 4,
+    "flowersPerChunk": 0,
     "mushroomsPerChunk": 0,
     "bigMushroomsChunk": 0,
-    "sandPatchesPerChunk": 4,
+    "sandPatchesPerChunk": 0,
     "gravelPatchesPerChunk": 0,
     "reedsPerChunk": 0,
-    "cactiPerChunk": 3,
+    "cactiPerChunk": 0,
     "treesPerChunk": 1,
-    "vanillaTreeType": "Mega spruce trees",
+    "vanillaTreeType": "Mega pine trees",
     "treeType": 1,
     "minHeight": 7,
     "maxWaterDepth": 0,
@@ -85,8 +85,8 @@
     "treeFruits": {
       "value": ""
     },
-    "spawnStronghold": true,
-    "spawnMineshaft": true,
+    "spawnStronghold": false,
+    "spawnMineshaft": false,
     "spawnPillagerOutpost": false,
     "villageType": "none",
     "spawnWoodlandMansion": false,
@@ -99,9 +99,18 @@
     "defaultFeatures": [
       "Caves",
       "Ores",
-      "DeadBushes",
-      "DesertFeatures"
+      "FrozenTopLayer"
     ],
-    "spawnEntries": []
+    "spawnEntries": [
+      {
+        "entity": {
+          "value": "CUSTOM:Corrupted"
+        },
+        "minGroup": 4,
+        "maxGroup": 7,
+        "weight": 19,
+        "spawnType": "ambient"
+      }
+    ]
   }
 }

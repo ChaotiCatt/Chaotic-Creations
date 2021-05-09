@@ -5,8 +5,7 @@ import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.network.NetworkHooks;
 import net.minecraftforge.fml.network.FMLPlayMessages;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -21,6 +20,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.ActionResult;
 import net.minecraft.network.IPacket;
 import net.minecraft.item.UseAction;
+import net.minecraft.item.ShootableItem;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -37,12 +37,11 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.client.renderer.entity.SpriteRenderer;
-import net.minecraft.client.Minecraft;
 
 import net.mcreator.chaoticcreations.procedures.ChaotiCattsHandCannonRangedItemUsedProcedure;
 import net.mcreator.chaoticcreations.procedures.ChaotiCattsHandCannonBulletHitsLivingEntityProcedure;
 import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
+import net.mcreator.chaoticcreations.entity.renderer.TheClawRenderer;
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 
 import java.util.Random;
@@ -57,25 +56,18 @@ import com.google.common.collect.ImmutableMultimap;
 public class TheClawItem extends ChaoticCreationsModElements.ModElement {
 	@ObjectHolder("chaotic_creations:the_claw")
 	public static final Item block = null;
-	@ObjectHolder("chaotic_creations:entitybulletthe_claw")
-	public static final EntityType arrow = null;
+	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
+			.size(0.5f, 0.5f)).build("entitybulletthe_claw").setRegistryName("entitybulletthe_claw");
 	public TheClawItem(ChaoticCreationsModElements instance) {
 		super(instance, 20);
+		FMLJavaModLoadingContext.get().getModEventBus().register(new TheClawRenderer.ModelRegisterHandler());
 	}
 
 	@Override
 	public void initElements() {
 		elements.items.add(() -> new ItemRanged());
-		elements.entities.add(() -> (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
-				.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
-				.size(0.5f, 0.5f)).build("entitybulletthe_claw").setRegistryName("entitybulletthe_claw"));
-	}
-
-	@Override
-	@OnlyIn(Dist.CLIENT)
-	public void init(FMLCommonSetupEvent event) {
-		RenderingRegistry.registerEntityRenderingHandler(arrow,
-				renderManager -> new SpriteRenderer(renderManager, Minecraft.getInstance().getItemRenderer()));
+		elements.entities.add(() -> arrow);
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
@@ -127,14 +119,42 @@ public class TheClawItem extends ChaoticCreationsModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 				if (true) {
-					ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 6, 5);
-					itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
-					entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
-					{
-						Map<String, Object> $_dependencies = new HashMap<>();
-						$_dependencies.put("entity", entity);
-						$_dependencies.put("itemstack", itemstack);
-						ChaotiCattsHandCannonRangedItemUsedProcedure.executeProcedure($_dependencies);
+					ItemStack stack = ShootableItem.getHeldAmmo(entity,
+							e -> e.getItem() == new ItemStack(MagnumroundsItem.block, (int) (1)).getItem());
+					if (stack == ItemStack.EMPTY) {
+						for (int i = 0; i < entity.inventory.mainInventory.size(); i++) {
+							ItemStack teststack = entity.inventory.mainInventory.get(i);
+							if (teststack != null && teststack.getItem() == new ItemStack(MagnumroundsItem.block, (int) (1)).getItem()) {
+								stack = teststack;
+								break;
+							}
+						}
+					}
+					if (entity.abilities.isCreativeMode || stack != ItemStack.EMPTY) {
+						ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 6, 5);
+						itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
+						if (entity.abilities.isCreativeMode) {
+							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
+						} else {
+							if (new ItemStack(MagnumroundsItem.block, (int) (1)).isDamageable()) {
+								if (stack.attemptDamageItem(1, random, entity)) {
+									stack.shrink(1);
+									stack.setDamage(0);
+									if (stack.isEmpty())
+										entity.inventory.deleteStack(stack);
+								}
+							} else {
+								stack.shrink(1);
+								if (stack.isEmpty())
+									entity.inventory.deleteStack(stack);
+							}
+						}
+						{
+							Map<String, Object> $_dependencies = new HashMap<>();
+							$_dependencies.put("entity", entity);
+							$_dependencies.put("itemstack", itemstack);
+							ChaotiCattsHandCannonRangedItemUsedProcedure.executeProcedure($_dependencies);
+						}
 					}
 				}
 			}
@@ -172,7 +192,7 @@ public class TheClawItem extends ChaoticCreationsModElements.ModElement {
 
 		@Override
 		protected ItemStack getArrowStack() {
-			return null;
+			return new ItemStack(MagnumroundsItem.block, (int) (1));
 		}
 
 		@Override

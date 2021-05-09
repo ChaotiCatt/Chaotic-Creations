@@ -28,7 +28,7 @@ public class OdinRenderer {
 				return new MobRenderer(renderManager, new Modeldahw9iofn(), 0.7f) {
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("chaotic_creations:textures/odintextures.png");
+						return new ResourceLocation("chaotic_creations:textures/llas.png");
 					}
 				};
 			});

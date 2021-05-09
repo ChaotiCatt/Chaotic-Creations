@@ -30,8 +30,9 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.chaoticcreations.procedures.OdinlightningattackBulletHitsBlockProcedure;
-import net.mcreator.chaoticcreations.entity.renderer.OdinlightningattackRenderer;
+import net.mcreator.chaoticcreations.procedures.ChaotiCattsSMGRangedItemUsedProcedure;
+import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
+import net.mcreator.chaoticcreations.entity.renderer.ChaotiCattsSMGRenderer;
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 
 import java.util.Random;
@@ -39,15 +40,15 @@ import java.util.Map;
 import java.util.HashMap;
 
 @ChaoticCreationsModElements.ModElement.Tag
-public class OdinlightningattackItem extends ChaoticCreationsModElements.ModElement {
-	@ObjectHolder("chaotic_creations:odinlightningattack")
+public class ChaotiCattsSMGItem extends ChaoticCreationsModElements.ModElement {
+	@ObjectHolder("chaotic_creations:chaoti_catts_smg")
 	public static final Item block = null;
 	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
-			.size(0.5f, 0.5f)).build("entitybulletodinlightningattack").setRegistryName("entitybulletodinlightningattack");
-	public OdinlightningattackItem(ChaoticCreationsModElements instance) {
-		super(instance, 42);
-		FMLJavaModLoadingContext.get().getModEventBus().register(new OdinlightningattackRenderer.ModelRegisterHandler());
+			.size(0.5f, 0.5f)).build("entitybulletchaoti_catts_smg").setRegistryName("entitybulletchaoti_catts_smg");
+	public ChaotiCattsSMGItem(ChaoticCreationsModElements instance) {
+		super(instance, 49);
+		FMLJavaModLoadingContext.get().getModEventBus().register(new ChaotiCattsSMGRenderer.ModelRegisterHandler());
 	}
 
 	@Override
@@ -57,8 +58,8 @@ public class OdinlightningattackItem extends ChaoticCreationsModElements.ModElem
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(null).maxStackSize(1));
-			setRegistryName("odinlightningattack");
+			super(new Item.Properties().group(ChaoticCreationsItemGroup.tab).maxStackSize(1));
+			setRegistryName("chaoti_catts_smg");
 		}
 
 		@Override
@@ -69,7 +70,7 @@ public class OdinlightningattackItem extends ChaoticCreationsModElements.ModElem
 
 		@Override
 		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.BOW;
+			return UseAction.SPEAR;
 		}
 
 		@Override
@@ -78,16 +79,24 @@ public class OdinlightningattackItem extends ChaoticCreationsModElements.ModElem
 		}
 
 		@Override
-		public void onPlayerStoppedUsing(ItemStack itemstack, World world, LivingEntity entityLiving, int timeLeft) {
+		public void onUsingTick(ItemStack itemstack, LivingEntity entityLiving, int count) {
+			World world = entityLiving.world;
 			if (!world.isRemote && entityLiving instanceof ServerPlayerEntity) {
 				ServerPlayerEntity entity = (ServerPlayerEntity) entityLiving;
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 				if (true) {
-					ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 0, 5);
+					ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 0.5, 5);
 					itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 					entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
+					{
+						Map<String, Object> $_dependencies = new HashMap<>();
+						$_dependencies.put("entity", entity);
+						$_dependencies.put("itemstack", itemstack);
+						ChaotiCattsSMGRangedItemUsedProcedure.executeProcedure($_dependencies);
+					}
+					entity.stopActiveHand();
 				}
 			}
 		}
@@ -119,7 +128,7 @@ public class OdinlightningattackItem extends ChaoticCreationsModElements.ModElem
 		@Override
 		@OnlyIn(Dist.CLIENT)
 		public ItemStack getItem() {
-			return new ItemStack(Items.NETHER_STAR, (int) (1));
+			return new ItemStack(Items.GOLD_NUGGET, (int) (1));
 		}
 
 		@Override
@@ -128,36 +137,9 @@ public class OdinlightningattackItem extends ChaoticCreationsModElements.ModElem
 		}
 
 		@Override
-		public void onCollideWithPlayer(PlayerEntity entity) {
-			super.onCollideWithPlayer(entity);
-			Entity sourceentity = this.func_234616_v_();
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			World world = this.world;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("world", world);
-				OdinlightningattackBulletHitsBlockProcedure.executeProcedure($_dependencies);
-			}
-		}
-
-		@Override
 		protected void arrowHit(LivingEntity entity) {
 			super.arrowHit(entity);
 			entity.setArrowCountInEntity(entity.getArrowCountInEntity() - 1);
-			Entity sourceentity = this.func_234616_v_();
-			double x = this.getPosX();
-			double y = this.getPosY();
-			double z = this.getPosZ();
-			World world = this.world;
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("world", world);
-				OdinlightningattackBulletHitsBlockProcedure.executeProcedure($_dependencies);
-			}
 		}
 
 		@Override
@@ -185,7 +167,7 @@ public class OdinlightningattackItem extends ChaoticCreationsModElements.ModElem
 		double y = entity.getPosY();
 		double z = entity.getPosZ();
 		world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z,
-				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.thunder")),
+				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.firework_rocket.blast")),
 				SoundCategory.PLAYERS, 1, 1f / (random.nextFloat() * 0.5f + 1) + (power / 2));
 		return entityarrow;
 	}
@@ -197,7 +179,7 @@ public class OdinlightningattackItem extends ChaoticCreationsModElements.ModElem
 		double d3 = target.getPosZ() - entity.getPosZ();
 		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 9f * 2, 12.0F);
 		entityarrow.setSilent(true);
-		entityarrow.setDamage(0);
+		entityarrow.setDamage(0.5);
 		entityarrow.setKnockbackStrength(5);
 		entityarrow.setIsCritical(false);
 		entity.world.addEntity(entityarrow);
@@ -205,7 +187,7 @@ public class OdinlightningattackItem extends ChaoticCreationsModElements.ModElem
 		double y = entity.getPosY();
 		double z = entity.getPosZ();
 		entity.world.playSound((PlayerEntity) null, (double) x, (double) y, (double) z,
-				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.lightning_bolt.thunder")),
+				(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.firework_rocket.blast")),
 				SoundCategory.PLAYERS, 1, 1f / (new Random().nextFloat() * 0.5f + 1));
 		return entityarrow;
 	}
