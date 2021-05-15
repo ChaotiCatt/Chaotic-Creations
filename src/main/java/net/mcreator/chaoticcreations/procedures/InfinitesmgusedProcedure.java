@@ -10,20 +10,20 @@ import net.mcreator.chaoticcreations.ChaoticCreationsMod;
 import java.util.Map;
 
 @ChaoticCreationsModElements.ModElement.Tag
-public class ChaotiCattsSMGRangedItemUsedProcedure extends ChaoticCreationsModElements.ModElement {
-	public ChaotiCattsSMGRangedItemUsedProcedure(ChaoticCreationsModElements instance) {
-		super(instance, 50);
+public class InfinitesmgusedProcedure extends ChaoticCreationsModElements.ModElement {
+	public InfinitesmgusedProcedure(ChaoticCreationsModElements instance) {
+		super(instance, 51);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
-				ChaoticCreationsMod.LOGGER.warn("Failed to load dependency entity for procedure ChaotiCattsSMGRangedItemUsed!");
+				ChaoticCreationsMod.LOGGER.warn("Failed to load dependency entity for procedure Infinitesmgused!");
 			return;
 		}
 		if (dependencies.get("itemstack") == null) {
 			if (!dependencies.containsKey("itemstack"))
-				ChaoticCreationsMod.LOGGER.warn("Failed to load dependency itemstack for procedure ChaotiCattsSMGRangedItemUsed!");
+				ChaoticCreationsMod.LOGGER.warn("Failed to load dependency itemstack for procedure Infinitesmgused!");
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");

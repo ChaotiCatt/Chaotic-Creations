@@ -17,7 +17,7 @@
             "value": ""
           },
           "color": {
-            "value": -16777216,
+            "value": -65536,
             "falpha": 0.0
           },
           "id": 0,
@@ -35,7 +35,7 @@
             "value": ""
           },
           "color": {
-            "value": -16777216,
+            "value": -3328,
             "falpha": 0.0
           },
           "id": 1,
@@ -64,7 +64,7 @@
         "type": "outputslot",
         "data": {
           "color": {
-            "value": -1048576,
+            "value": -16715552,
             "falpha": 0.0
           },
           "id": 2,
@@ -84,8 +84,8 @@
             "falpha": 0.0
           },
           "name": "Chaotic Portal",
-          "x": 175,
-          "y": 39
+          "x": 178,
+          "y": 41
         }
       }
     ]

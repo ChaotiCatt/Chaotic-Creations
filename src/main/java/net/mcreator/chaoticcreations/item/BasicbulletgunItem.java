@@ -30,25 +30,21 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.chaoticcreations.procedures.ChaotiCattsSMGRangedItemUsedProcedure;
-import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
-import net.mcreator.chaoticcreations.entity.renderer.ChaotiCattsSMGRenderer;
+import net.mcreator.chaoticcreations.entity.renderer.BasicbulletgunRenderer;
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 
 import java.util.Random;
-import java.util.Map;
-import java.util.HashMap;
 
 @ChaoticCreationsModElements.ModElement.Tag
-public class ChaotiCattsSMGItem extends ChaoticCreationsModElements.ModElement {
-	@ObjectHolder("chaotic_creations:chaoti_catts_smg")
+public class BasicbulletgunItem extends ChaoticCreationsModElements.ModElement {
+	@ObjectHolder("chaotic_creations:basicbulletgun")
 	public static final Item block = null;
 	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
-			.size(0.5f, 0.5f)).build("entitybulletchaoti_catts_smg").setRegistryName("entitybulletchaoti_catts_smg");
-	public ChaotiCattsSMGItem(ChaoticCreationsModElements instance) {
-		super(instance, 49);
-		FMLJavaModLoadingContext.get().getModEventBus().register(new ChaotiCattsSMGRenderer.ModelRegisterHandler());
+			.size(0.5f, 0.5f)).build("entitybulletbasicbulletgun").setRegistryName("entitybulletbasicbulletgun");
+	public BasicbulletgunItem(ChaoticCreationsModElements instance) {
+		super(instance, 59);
+		FMLJavaModLoadingContext.get().getModEventBus().register(new BasicbulletgunRenderer.ModelRegisterHandler());
 	}
 
 	@Override
@@ -58,8 +54,8 @@ public class ChaotiCattsSMGItem extends ChaoticCreationsModElements.ModElement {
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(ChaoticCreationsItemGroup.tab).maxStackSize(1));
-			setRegistryName("chaoti_catts_smg");
+			super(new Item.Properties().group(null).maxDamage(100));
+			setRegistryName("basicbulletgun");
 		}
 
 		@Override
@@ -70,7 +66,7 @@ public class ChaotiCattsSMGItem extends ChaoticCreationsModElements.ModElement {
 
 		@Override
 		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.SPEAR;
+			return UseAction.BOW;
 		}
 
 		@Override
@@ -79,24 +75,16 @@ public class ChaotiCattsSMGItem extends ChaoticCreationsModElements.ModElement {
 		}
 
 		@Override
-		public void onUsingTick(ItemStack itemstack, LivingEntity entityLiving, int count) {
-			World world = entityLiving.world;
+		public void onPlayerStoppedUsing(ItemStack itemstack, World world, LivingEntity entityLiving, int timeLeft) {
 			if (!world.isRemote && entityLiving instanceof ServerPlayerEntity) {
 				ServerPlayerEntity entity = (ServerPlayerEntity) entityLiving;
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 				if (true) {
-					ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 0.5, 5);
+					ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 0.2, 2);
 					itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 					entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
-					{
-						Map<String, Object> $_dependencies = new HashMap<>();
-						$_dependencies.put("entity", entity);
-						$_dependencies.put("itemstack", itemstack);
-						ChaotiCattsSMGRangedItemUsedProcedure.executeProcedure($_dependencies);
-					}
-					entity.stopActiveHand();
 				}
 			}
 		}
@@ -179,8 +167,8 @@ public class ChaotiCattsSMGItem extends ChaoticCreationsModElements.ModElement {
 		double d3 = target.getPosZ() - entity.getPosZ();
 		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 9f * 2, 12.0F);
 		entityarrow.setSilent(true);
-		entityarrow.setDamage(0.5);
-		entityarrow.setKnockbackStrength(5);
+		entityarrow.setDamage(0.2);
+		entityarrow.setKnockbackStrength(2);
 		entityarrow.setIsCritical(false);
 		entity.world.addEntity(entityarrow);
 		double x = entity.getPosX();

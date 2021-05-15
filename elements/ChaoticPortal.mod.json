@@ -86,7 +86,7 @@
     "particleAmount": 4,
     "hasInventory": false,
     "guiBoundTo": "Quests",
-    "openGUIOnRightClick": false,
+    "openGUIOnRightClick": true,
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,

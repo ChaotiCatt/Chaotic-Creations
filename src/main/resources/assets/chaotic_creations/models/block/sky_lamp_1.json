@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "chaotic_creations:blocks/sky_lamp_1",
+    "particle": "chaotic_creations:blocks/sky_lamp_1"
+  }
+}

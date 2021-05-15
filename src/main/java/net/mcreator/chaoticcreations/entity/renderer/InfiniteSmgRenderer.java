@@ -9,15 +9,15 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.chaoticcreations.item.ChaotiCattsSMGItem;
+import net.mcreator.chaoticcreations.item.InfiniteSmgItem;
 
 @OnlyIn(Dist.CLIENT)
-public class ChaotiCattsSMGRenderer {
+public class InfiniteSmgRenderer {
 	public static class ModelRegisterHandler {
 		@SubscribeEvent
 		@OnlyIn(Dist.CLIENT)
 		public void registerModels(ModelRegistryEvent event) {
-			RenderingRegistry.registerEntityRenderingHandler(ChaotiCattsSMGItem.arrow,
+			RenderingRegistry.registerEntityRenderingHandler(InfiniteSmgItem.arrow,
 					renderManager -> new SpriteRenderer(renderManager, Minecraft.getInstance().getItemRenderer()));
 		}
 	}

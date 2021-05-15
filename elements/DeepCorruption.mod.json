@@ -106,9 +106,9 @@
         "entity": {
           "value": "CUSTOM:Corrupted"
         },
-        "minGroup": 4,
-        "maxGroup": 7,
-        "weight": 19,
+        "minGroup": 1,
+        "maxGroup": 5,
+        "weight": 9,
         "spawnType": "ambient"
       }
     ]

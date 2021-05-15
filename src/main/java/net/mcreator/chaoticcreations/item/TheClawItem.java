@@ -20,7 +20,6 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.ActionResult;
 import net.minecraft.network.IPacket;
 import net.minecraft.item.UseAction;
-import net.minecraft.item.ShootableItem;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
@@ -119,42 +118,14 @@ public class TheClawItem extends ChaoticCreationsModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 				if (true) {
-					ItemStack stack = ShootableItem.getHeldAmmo(entity,
-							e -> e.getItem() == new ItemStack(MagnumroundsItem.block, (int) (1)).getItem());
-					if (stack == ItemStack.EMPTY) {
-						for (int i = 0; i < entity.inventory.mainInventory.size(); i++) {
-							ItemStack teststack = entity.inventory.mainInventory.get(i);
-							if (teststack != null && teststack.getItem() == new ItemStack(MagnumroundsItem.block, (int) (1)).getItem()) {
-								stack = teststack;
-								break;
-							}
-						}
-					}
-					if (entity.abilities.isCreativeMode || stack != ItemStack.EMPTY) {
-						ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 6, 5);
-						itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
-						if (entity.abilities.isCreativeMode) {
-							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
-						} else {
-							if (new ItemStack(MagnumroundsItem.block, (int) (1)).isDamageable()) {
-								if (stack.attemptDamageItem(1, random, entity)) {
-									stack.shrink(1);
-									stack.setDamage(0);
-									if (stack.isEmpty())
-										entity.inventory.deleteStack(stack);
-								}
-							} else {
-								stack.shrink(1);
-								if (stack.isEmpty())
-									entity.inventory.deleteStack(stack);
-							}
-						}
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("entity", entity);
-							$_dependencies.put("itemstack", itemstack);
-							ChaotiCattsHandCannonRangedItemUsedProcedure.executeProcedure($_dependencies);
-						}
+					ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 6, 5);
+					itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
+					entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
+					{
+						Map<String, Object> $_dependencies = new HashMap<>();
+						$_dependencies.put("entity", entity);
+						$_dependencies.put("itemstack", itemstack);
+						ChaotiCattsHandCannonRangedItemUsedProcedure.executeProcedure($_dependencies);
 					}
 				}
 			}
@@ -192,7 +163,7 @@ public class TheClawItem extends ChaoticCreationsModElements.ModElement {
 
 		@Override
 		protected ItemStack getArrowStack() {
-			return new ItemStack(MagnumroundsItem.block, (int) (1));
+			return null;
 		}
 
 		@Override

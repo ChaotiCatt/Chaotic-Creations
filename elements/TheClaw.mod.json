@@ -14,7 +14,7 @@
     },
     "stackSize": 1,
     "ammoItem": {
-      "value": "CUSTOM:Magnumrounds"
+      "value": ""
     },
     "shootConstantly": false,
     "usageCount": 0,

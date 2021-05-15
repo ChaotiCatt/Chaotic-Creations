@@ -70,7 +70,7 @@ public class QuestsGuiWindow extends ContainerScreen<QuestsGui.GuiContainerMod> 
 
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
-		this.font.drawString(ms, "Chaotic Portal", 49, 2, -12829636);
+		this.font.drawString(ms, "Chaotic Portal", 52, 4, -12829636);
 	}
 
 	@Override
