@@ -75,8 +75,7 @@ public class InfiniteSmgItem extends ChaoticCreationsModElements.ModElement {
 		@Override
 		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
-			list.add(new StringTextComponent("Hand Crafted by ChaotiCatt himself"));
-			list.add(new StringTextComponent("\\This smg is an example of fine craftsmanship."));
+			list.add(new StringTextComponent("Hand Crafted by ChaotiCatt himself This smg is an example of fine craftsmanship."));
 		}
 
 		@Override

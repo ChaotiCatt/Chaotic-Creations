@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "magnum_rounds",
     "customModelName": "Normal",
-    "name": ".500 Magnum",
+    "name": "Magnum Rounds",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "CUSTOM:ChaoticItems"

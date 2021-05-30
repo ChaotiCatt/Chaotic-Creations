@@ -1,6 +1,7 @@
 {
-  "parent": "item/handheld",
+  "parent": "chaotic_creations:custom/trust",
   "textures": {
-    "layer0": "chaotic_creations:items/trust"
+    "0": "chaotic_creations:blocks/trust",
+    "particle": "chaotic_creations:items/trust"
   }
 }

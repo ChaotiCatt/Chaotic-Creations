@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "chaotic_creations:items/no"
+    "layer0": "chaotic_creations:items/br"
   },
   "display": {
     "thirdperson_righthand": {

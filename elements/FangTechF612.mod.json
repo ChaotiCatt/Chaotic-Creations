@@ -3,24 +3,24 @@
   "_type": "gun",
   "definition": {
     "renderType": 0,
-    "texture": "no",
+    "texture": "br",
     "customModelName": "Normal",
     "name": "FangTech F612",
     "specialInfo": [],
     "creativeTab": {
-      "value": "COMBAT"
+      "value": "CUSTOM:ChaoticCreations"
     },
     "stackSize": 1,
     "ammoItem": {
-      "value": ""
+      "value": "CUSTOM:Riflerounds1"
     },
     "shootConstantly": false,
-    "usageCount": 100,
+    "usageCount": 0,
     "actionSound": {
       "value": "entity.firework.blast"
     },
     "hasGlow": false,
-    "animation": "bow",
+    "animation": "none",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "onRangedItemUsed": {

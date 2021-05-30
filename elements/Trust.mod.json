@@ -2,9 +2,9 @@
   "_fv": 18,
   "_type": "tool",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "trust",
-    "customModelName": "Normal",
+    "customModelName": "trust:default",
     "name": "Trust",
     "specialInfo": [
       "You sense a chaotic energy radiating from the sword....."

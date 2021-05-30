@@ -2,21 +2,21 @@
   "_fv": 18,
   "_type": "gun",
   "definition": {
-    "renderType": 0,
-    "texture": "chaoticatts_smg",
-    "customModelName": "Normal",
-    "name": "Infinite Smg",
+    "renderType": 1,
+    "texture": "no",
+    "customModelName": "pistols:default",
+    "name": "Pistol S",
     "specialInfo": [
-      "Hand Crafted by ChaotiCatt himself This smg is an example of fine craftsmanship."
+      "WHY IS IT 3D!?!?!?!?!"
     ],
     "creativeTab": {
-      "value": "CUSTOM:ChaoticCreations"
+      "value": "COMBAT"
     },
     "stackSize": 1,
     "ammoItem": {
-      "value": ""
+      "value": "CUSTOM:Magnumrounds"
     },
-    "shootConstantly": true,
+    "shootConstantly": false,
     "usageCount": 0,
     "actionSound": {
       "value": "entity.firework.blast"
@@ -25,11 +25,8 @@
     "animation": "spear",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
-    "onRangedItemUsed": {
-      "name": "Infinitesmgused"
-    },
     "bulletPower": 9.0,
-    "bulletDamage": 0.5,
+    "bulletDamage": 0.7,
     "bulletKnockback": 5,
     "bulletParticles": false,
     "bulletIgnitesFire": false,

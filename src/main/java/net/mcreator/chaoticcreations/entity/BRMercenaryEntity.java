@@ -30,6 +30,7 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.monster.PhantomEntity;
+import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
@@ -54,18 +55,18 @@ import net.minecraft.entity.CreatureAttribute;
 import net.minecraft.entity.AgeableEntity;
 
 import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
-import net.mcreator.chaoticcreations.item.PistolItem;
-import net.mcreator.chaoticcreations.entity.renderer.PistolMercenaryRenderer;
+import net.mcreator.chaoticcreations.item.FangTechF612Item;
+import net.mcreator.chaoticcreations.entity.renderer.BRMercenaryRenderer;
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 
 @ChaoticCreationsModElements.ModElement.Tag
-public class PistolMercenaryEntity extends ChaoticCreationsModElements.ModElement {
+public class BRMercenaryEntity extends ChaoticCreationsModElements.ModElement {
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.AMBIENT)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
-			.size(0.6f, 1.8f)).build("pistol_mercenary").setRegistryName("pistol_mercenary");
-	public PistolMercenaryEntity(ChaoticCreationsModElements instance) {
-		super(instance, 57);
-		FMLJavaModLoadingContext.get().getModEventBus().register(new PistolMercenaryRenderer.ModelRegisterHandler());
+			.size(0.6f, 1.8f)).build("br_mercenary").setRegistryName("br_mercenary");
+	public BRMercenaryEntity(ChaoticCreationsModElements instance) {
+		super(instance, 62);
+		FMLJavaModLoadingContext.get().getModEventBus().register(new BRMercenaryRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
 		MinecraftForge.EVENT_BUS.register(this);
 	}
@@ -74,7 +75,7 @@ public class PistolMercenaryEntity extends ChaoticCreationsModElements.ModElemen
 	public void initElements() {
 		elements.entities.add(() -> entity);
 		elements.items.add(() -> new SpawnEggItem(entity, -1, -16777216, new Item.Properties().group(ChaoticCreationsItemGroup.tab))
-				.setRegistryName("pistol_mercenary_spawn_egg"));
+				.setRegistryName("br_mercenary_spawn_egg"));
 	}
 
 	@SubscribeEvent
@@ -108,7 +109,7 @@ public class PistolMercenaryEntity extends ChaoticCreationsModElements.ModElemen
 			super(type, world);
 			experienceValue = 0;
 			setNoAI(false);
-			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(PistolItem.block, (int) (1)));
+			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(FangTechF612Item.block, (int) (1)));
 		}
 
 		@Override
@@ -128,6 +129,7 @@ public class PistolMercenaryEntity extends ChaoticCreationsModElements.ModElemen
 			this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, CorruptedEntity.CustomEntity.class, false, false));
 			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, PhantomEntity.class, false, false));
 			this.targetSelector.addGoal(9, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
+			this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, MonsterEntity.class, false, false));
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {
@@ -201,7 +203,7 @@ public class PistolMercenaryEntity extends ChaoticCreationsModElements.ModElemen
 		}
 
 		public void attackEntityWithRangedAttack(LivingEntity target, float flval) {
-			PistolItem.shoot(this, target);
+			FangTechF612Item.shoot(this, target);
 		}
 
 		@Override

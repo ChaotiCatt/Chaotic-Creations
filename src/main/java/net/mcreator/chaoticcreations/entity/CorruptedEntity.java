@@ -20,11 +20,15 @@ import net.minecraft.network.IPacket;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.Item;
 import net.minecraft.entity.monster.MonsterEntity;
+import net.minecraft.entity.merchant.villager.VillagerEntity;
 import net.minecraft.entity.ai.goal.SwimGoal;
 import net.minecraft.entity.ai.goal.RandomWalkingGoal;
+import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
 import net.minecraft.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.HurtByTargetGoal;
+import net.minecraft.entity.ai.goal.FollowMobGoal;
+import net.minecraft.entity.ai.goal.BreakDoorGoal;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.MobEntity;
@@ -103,6 +107,9 @@ public class CorruptedEntity extends ChaoticCreationsModElements.ModElement {
 			this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
 			this.goalSelector.addGoal(4, new LookRandomlyGoal(this));
 			this.goalSelector.addGoal(5, new SwimGoal(this));
+			this.goalSelector.addGoal(6, new FollowMobGoal(this, (float) 1, 10, 5));
+			this.goalSelector.addGoal(7, new BreakDoorGoal(this, e -> true));
+			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, VillagerEntity.class, false, false));
 		}
 
 		@Override

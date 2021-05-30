@@ -10,6 +10,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.World;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.ResourceLocation;
@@ -21,6 +23,7 @@ import net.minecraft.item.UseAction;
 import net.minecraft.item.ShootableItem;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -30,26 +33,24 @@ import net.minecraft.entity.IRendersAsItem;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
+import net.minecraft.client.util.ITooltipFlag;
 
-import net.mcreator.chaoticcreations.procedures.FangTechF612RangedItemUsedProcedure;
-import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
-import net.mcreator.chaoticcreations.entity.renderer.FangTechF612Renderer;
+import net.mcreator.chaoticcreations.entity.renderer.PistolSRenderer;
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 
 import java.util.Random;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.List;
 
 @ChaoticCreationsModElements.ModElement.Tag
-public class FangTechF612Item extends ChaoticCreationsModElements.ModElement {
-	@ObjectHolder("chaotic_creations:fang_tech_f_612")
+public class PistolSItem extends ChaoticCreationsModElements.ModElement {
+	@ObjectHolder("chaotic_creations:pistol_s")
 	public static final Item block = null;
 	public static final EntityType arrow = (EntityType.Builder.<ArrowCustomEntity>create(ArrowCustomEntity::new, EntityClassification.MISC)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).setCustomClientFactory(ArrowCustomEntity::new)
-			.size(0.5f, 0.5f)).build("entitybulletfang_tech_f_612").setRegistryName("entitybulletfang_tech_f_612");
-	public FangTechF612Item(ChaoticCreationsModElements instance) {
-		super(instance, 61);
-		FMLJavaModLoadingContext.get().getModEventBus().register(new FangTechF612Renderer.ModelRegisterHandler());
+			.size(0.5f, 0.5f)).build("entitybulletpistol_s").setRegistryName("entitybulletpistol_s");
+	public PistolSItem(ChaoticCreationsModElements instance) {
+		super(instance, 63);
+		FMLJavaModLoadingContext.get().getModEventBus().register(new PistolSRenderer.ModelRegisterHandler());
 	}
 
 	@Override
@@ -59,8 +60,8 @@ public class FangTechF612Item extends ChaoticCreationsModElements.ModElement {
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(ChaoticCreationsItemGroup.tab).maxStackSize(1));
-			setRegistryName("fang_tech_f_612");
+			super(new Item.Properties().group(ItemGroup.COMBAT).maxStackSize(1));
+			setRegistryName("pistol_s");
 		}
 
 		@Override
@@ -70,8 +71,14 @@ public class FangTechF612Item extends ChaoticCreationsModElements.ModElement {
 		}
 
 		@Override
+		public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
+			super.addInformation(itemstack, world, list, flag);
+			list.add(new StringTextComponent("WHY IS IT 3D!?!?!?!?!"));
+		}
+
+		@Override
 		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.NONE;
+			return UseAction.SPEAR;
 		}
 
 		@Override
@@ -88,23 +95,23 @@ public class FangTechF612Item extends ChaoticCreationsModElements.ModElement {
 				double z = entity.getPosZ();
 				if (true) {
 					ItemStack stack = ShootableItem.getHeldAmmo(entity,
-							e -> e.getItem() == new ItemStack(Riflerounds1Item.block, (int) (1)).getItem());
+							e -> e.getItem() == new ItemStack(MagnumroundsItem.block, (int) (1)).getItem());
 					if (stack == ItemStack.EMPTY) {
 						for (int i = 0; i < entity.inventory.mainInventory.size(); i++) {
 							ItemStack teststack = entity.inventory.mainInventory.get(i);
-							if (teststack != null && teststack.getItem() == new ItemStack(Riflerounds1Item.block, (int) (1)).getItem()) {
+							if (teststack != null && teststack.getItem() == new ItemStack(MagnumroundsItem.block, (int) (1)).getItem()) {
 								stack = teststack;
 								break;
 							}
 						}
 					}
 					if (entity.abilities.isCreativeMode || stack != ItemStack.EMPTY) {
-						ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 0.5, 2);
+						ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 0.7, 5);
 						itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 						if (entity.abilities.isCreativeMode) {
 							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
 						} else {
-							if (new ItemStack(Riflerounds1Item.block, (int) (1)).isDamageable()) {
+							if (new ItemStack(MagnumroundsItem.block, (int) (1)).isDamageable()) {
 								if (stack.attemptDamageItem(1, random, entity)) {
 									stack.shrink(1);
 									stack.setDamage(0);
@@ -116,12 +123,6 @@ public class FangTechF612Item extends ChaoticCreationsModElements.ModElement {
 								if (stack.isEmpty())
 									entity.inventory.deleteStack(stack);
 							}
-						}
-						{
-							Map<String, Object> $_dependencies = new HashMap<>();
-							$_dependencies.put("entity", entity);
-							$_dependencies.put("world", world);
-							FangTechF612RangedItemUsedProcedure.executeProcedure($_dependencies);
 						}
 					}
 				}
@@ -160,7 +161,7 @@ public class FangTechF612Item extends ChaoticCreationsModElements.ModElement {
 
 		@Override
 		protected ItemStack getArrowStack() {
-			return new ItemStack(Riflerounds1Item.block, (int) (1));
+			return new ItemStack(MagnumroundsItem.block, (int) (1));
 		}
 
 		@Override
@@ -206,8 +207,8 @@ public class FangTechF612Item extends ChaoticCreationsModElements.ModElement {
 		double d3 = target.getPosZ() - entity.getPosZ();
 		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 9f * 2, 12.0F);
 		entityarrow.setSilent(true);
-		entityarrow.setDamage(0.5);
-		entityarrow.setKnockbackStrength(2);
+		entityarrow.setDamage(0.7);
+		entityarrow.setKnockbackStrength(5);
 		entityarrow.setIsCritical(false);
 		entity.world.addEntity(entityarrow);
 		double x = entity.getPosX();
