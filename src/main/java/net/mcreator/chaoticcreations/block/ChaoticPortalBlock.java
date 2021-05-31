@@ -27,7 +27,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
 import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
-import net.mcreator.chaoticcreations.gui.QuestsGui;
+import net.mcreator.chaoticcreations.gui.ChaoticPortalGUIGui;
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 
 import java.util.List;
@@ -79,7 +79,8 @@ public class ChaoticPortalBlock extends ChaoticCreationsModElements.ModElement {
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new QuestsGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
+						return new ChaoticPortalGUIGui.GuiContainerMod(id, inventory,
+								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
 			}

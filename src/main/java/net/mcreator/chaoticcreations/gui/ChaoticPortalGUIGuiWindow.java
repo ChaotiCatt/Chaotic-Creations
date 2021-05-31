@@ -20,11 +20,11 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 @OnlyIn(Dist.CLIENT)
-public class QuestsGuiWindow extends ContainerScreen<QuestsGui.GuiContainerMod> {
+public class ChaoticPortalGUIGuiWindow extends ContainerScreen<ChaoticPortalGUIGui.GuiContainerMod> {
 	private World world;
 	private int x, y, z;
 	private PlayerEntity entity;
-	public QuestsGuiWindow(QuestsGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
+	public ChaoticPortalGUIGuiWindow(ChaoticPortalGUIGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
 		this.x = container.x;
@@ -34,7 +34,7 @@ public class QuestsGuiWindow extends ContainerScreen<QuestsGui.GuiContainerMod> 
 		this.xSize = 176;
 		this.ySize = 166;
 	}
-	private static final ResourceLocation texture = new ResourceLocation("chaotic_creations:textures/portal.png");
+	private static final ResourceLocation texture = new ResourceLocation("chaotic_creations:textures/chaotic_portal_gui.png");
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);
@@ -85,8 +85,8 @@ public class QuestsGuiWindow extends ContainerScreen<QuestsGui.GuiContainerMod> 
 		minecraft.keyboardListener.enableRepeatEvents(true);
 		this.addButton(new Button(this.guiLeft + 9, this.guiTop + 31, 50, 20, new StringTextComponent("React"), e -> {
 			if (true) {
-				ChaoticCreationsMod.PACKET_HANDLER.sendToServer(new QuestsGui.ButtonPressedMessage(0, x, y, z));
-				QuestsGui.handleButtonAction(entity, 0, x, y, z);
+				ChaoticCreationsMod.PACKET_HANDLER.sendToServer(new ChaoticPortalGUIGui.ButtonPressedMessage(0, x, y, z));
+				ChaoticPortalGUIGui.handleButtonAction(entity, 0, x, y, z);
 			}
 		}));
 	}

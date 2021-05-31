@@ -276,15 +276,6 @@
       "registry_name": "chaotic_cluster"
     },
     {
-      "name": "BlockChaoticCluster",
-      "type": "loottable",
-      "sortid": 15,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "block_chaotic_cluster"
-    },
-    {
       "name": "ChaoticEnergy",
       "type": "item",
       "sortid": 16,
@@ -570,15 +561,6 @@
       "registry_name": "chaotic_items"
     },
     {
-      "name": "Quests",
-      "type": "gui",
-      "sortid": 34,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "portal"
-    },
-    {
       "name": "ChaoticPortal",
       "type": "block",
       "sortid": 34,
@@ -586,39 +568,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "chaotic_portal"
-    },
-    {
-      "name": "ChaoticPortalOnBlockRightClicked",
-      "type": "procedure",
-      "sortid": 35,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "chaotic_portal_on_block_right_clicked",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
     },
     {
       "name": "PurifiedEnergy",
@@ -1071,6 +1020,15 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "eternal_3_d"
+    },
+    {
+      "name": "ChaoticPortalGUI",
+      "type": "gui",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chaotic_portal_gui"
     }
   ],
   "variable_elements": [],

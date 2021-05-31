@@ -37,11 +37,11 @@ import java.util.Map;
 import java.util.HashMap;
 
 @ChaoticCreationsModElements.ModElement.Tag
-public class QuestsGui extends ChaoticCreationsModElements.ModElement {
+public class ChaoticPortalGUIGui extends ChaoticCreationsModElements.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
-	public QuestsGui(ChaoticCreationsModElements instance) {
-		super(instance, 34);
+	public ChaoticPortalGUIGui(ChaoticCreationsModElements instance) {
+		super(instance, 68);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
@@ -52,12 +52,12 @@ public class QuestsGui extends ChaoticCreationsModElements.ModElement {
 	private static class ContainerRegisterHandler {
 		@SubscribeEvent
 		public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
-			event.getRegistry().register(containerType.setRegistryName("portal"));
+			event.getRegistry().register(containerType.setRegistryName("chaotic_portal_gui"));
 		}
 	}
 	@OnlyIn(Dist.CLIENT)
 	public void initElements() {
-		DeferredWorkQueue.runLater(() -> ScreenManager.registerFactory(containerType, QuestsGuiWindow::new));
+		DeferredWorkQueue.runLater(() -> ScreenManager.registerFactory(containerType, ChaoticPortalGUIGuiWindow::new));
 	}
 	public static class GuiContainerModFactory implements IContainerFactory {
 		public GuiContainerMod create(int id, PlayerInventory inv, PacketBuffer extraData) {

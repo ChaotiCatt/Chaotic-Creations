@@ -28,14 +28,15 @@ import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.pathfinding.PathNodeType;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
-import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ISidedInventory;
@@ -50,7 +51,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
 import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
-import net.mcreator.chaoticcreations.gui.QuestsGui;
+import net.mcreator.chaoticcreations.item.ChaoticEnergyItem;
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 
 import javax.annotation.Nullable;
@@ -58,8 +59,7 @@ import javax.annotation.Nullable;
 import java.util.stream.IntStream;
 import java.util.Random;
 import java.util.List;
-
-import io.netty.buffer.Unpooled;
+import java.util.Collections;
 
 @ChaoticCreationsModElements.ModElement.Tag
 public class ChaoticClusterBlock extends ChaoticCreationsModElements.ModElement {
@@ -108,6 +108,14 @@ public class ChaoticClusterBlock extends ChaoticCreationsModElements.ModElement 
 		@Override
 		public PathNodeType getAiPathNodeType(BlockState state, IBlockReader world, BlockPos pos, MobEntity entity) {
 			return PathNodeType.LAVA;
+		}
+
+		@Override
+		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
+			if (!dropsOriginal.isEmpty())
+				return dropsOriginal;
+			return Collections.singletonList(new ItemStack(ChaoticEnergyItem.block, (int) (1)));
 		}
 
 		@OnlyIn(Dist.CLIENT)
@@ -245,7 +253,7 @@ public class ChaoticClusterBlock extends ChaoticCreationsModElements.ModElement 
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return new QuestsGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+			return ChestContainer.createGeneric9X3(id, player, this);
 		}
 
 		@Override
