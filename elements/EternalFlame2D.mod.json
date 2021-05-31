@@ -2,9 +2,9 @@
   "_fv": 18,
   "_type": "tool",
   "definition": {
-    "renderType": 1,
+    "renderType": 0,
     "texture": "eternal_flame",
-    "customModelName": "eternalflame:default",
+    "customModelName": "Normal",
     "name": "Eternal Flame",
     "specialInfo": [
       "It's hotter than the sun",

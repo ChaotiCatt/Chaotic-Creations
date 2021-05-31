@@ -52,7 +52,7 @@ public class QuestsGui extends ChaoticCreationsModElements.ModElement {
 	private static class ContainerRegisterHandler {
 		@SubscribeEvent
 		public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
-			event.getRegistry().register(containerType.setRegistryName("quests"));
+			event.getRegistry().register(containerType.setRegistryName("portal"));
 		}
 	}
 	@OnlyIn(Dist.CLIENT)

@@ -1,0 +1,13 @@
+{
+  "group": "chaotic_creations",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chaotic_creations:eternal_flame"
+    }
+  ],
+  "result": {
+    "item": "chaotic_creations:eternal_flame_2_d",
+    "count": 1
+  }
+}

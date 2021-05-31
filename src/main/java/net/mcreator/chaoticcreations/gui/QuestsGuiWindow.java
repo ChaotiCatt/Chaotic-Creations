@@ -34,7 +34,7 @@ public class QuestsGuiWindow extends ContainerScreen<QuestsGui.GuiContainerMod> 
 		this.xSize = 176;
 		this.ySize = 166;
 	}
-	private static final ResourceLocation texture = new ResourceLocation("chaotic_creations:textures/quests.png");
+	private static final ResourceLocation texture = new ResourceLocation("chaotic_creations:textures/portal.png");
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);

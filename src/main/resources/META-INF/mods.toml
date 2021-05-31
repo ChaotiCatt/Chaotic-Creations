@@ -4,11 +4,11 @@ license="Academic Free License v3.0"
 
 [[mods]]
 modId="chaotic_creations"
-version="1.0.0"
+version="1.3"
 displayName="Chaotic Creations"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
-authors="kaiic, MCreator"
+authors="ChaotiCatt, Python77, MCreator"
 description='''
 A mod that adds lots of cool gear and stuff.
 '''

@@ -110,7 +110,7 @@ public class InfernalsVenganceItem extends ChaoticCreationsModElements.ModElemen
 						}
 					}
 					if (entity.abilities.isCreativeMode || stack != ItemStack.EMPTY) {
-						ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 4.5, 5);
+						ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 4, 5);
 						itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 						if (entity.abilities.isCreativeMode) {
 							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
@@ -244,7 +244,7 @@ public class InfernalsVenganceItem extends ChaoticCreationsModElements.ModElemen
 		double d3 = target.getPosZ() - entity.getPosZ();
 		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 9f * 2, 12.0F);
 		entityarrow.setSilent(true);
-		entityarrow.setDamage(4.5);
+		entityarrow.setDamage(4);
 		entityarrow.setKnockbackStrength(5);
 		entityarrow.setIsCritical(false);
 		entity.world.addEntity(entityarrow);

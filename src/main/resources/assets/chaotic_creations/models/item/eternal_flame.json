@@ -1,6 +1,7 @@
 {
-  "parent": "item/handheld",
+  "parent": "chaotic_creations:custom/eternalflame",
   "textures": {
-    "layer0": "chaotic_creations:items/eternal_flame"
+    "0": "chaotic_creations:blocks/eternalflame",
+    "particle": "chaotic_creations:items/eternal_flame"
   }
 }

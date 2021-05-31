@@ -576,7 +576,7 @@
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "quests"
+      "registry_name": "portal"
     },
     {
       "name": "ChaoticPortal",
@@ -1044,6 +1044,33 @@
           }
         ]
       }
+    },
+    {
+      "name": "EternalFlame2D",
+      "type": "tool",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternal_flame_2_d"
+    },
+    {
+      "name": "Eternal2d",
+      "type": "recipe",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternal_2d"
+    },
+    {
+      "name": "Eternal3D",
+      "type": "recipe",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternal_3_d"
     }
   ],
   "variable_elements": [],
@@ -1054,6 +1081,7 @@
       "item.chaotic_creations.odinmain": "Odinmain",
       "item.chaotic_creations.pistol_mercenary_spawn_egg": "Pistol Mercenary Spawn Egg",
       "item.minecraft.splash_potion.effect.redstone_vortex": "Splash Redstone Vortex",
+      "item.chaotic_creations.eternal_flame_2_d": "Eternal Flame",
       "item.chaotic_creations.basicbulletgun": "Basicbulletgun",
       "item.minecraft.lingering_potion.effect.redstone_vortex": "Lingering Redstone Vortex",
       "item.minecraft.tipped_arrow.effect.redstone_conduit": "Arrow of Redstone Conduit",
@@ -1116,9 +1144,9 @@
   "workspaceSettings": {
     "modid": "chaotic_creations",
     "modName": "Chaotic Creations",
-    "version": "1.0.0",
+    "version": "1.3",
     "description": "A mod that adds lots of cool gear and stuff.",
-    "author": "kaiic, MCreator",
+    "author": "ChaotiCatt, Python77, MCreator",
     "websiteURL": "https://mcreator.net",
     "license": "Academic Free License v3.0",
     "disableForgeVersionCheck": true,

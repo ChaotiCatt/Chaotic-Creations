@@ -1,7 +1,6 @@
 {
   "parent": "chaotic_creations:custom/pistols",
   "textures": {
-    "0": "chaotic_creations:blocks/spectret",
     "particle": "chaotic_creations:items/no"
   }
 }
