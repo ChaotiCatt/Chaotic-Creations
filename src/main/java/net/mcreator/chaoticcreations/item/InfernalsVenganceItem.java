@@ -64,7 +64,7 @@ public class InfernalsVenganceItem extends ChaoticCreationsModElements.ModElemen
 	}
 	public static class ItemRanged extends Item {
 		public ItemRanged() {
-			super(new Item.Properties().group(ChaoticCreationsItemGroup.tab).maxDamage(100));
+			super(new Item.Properties().group(ChaoticCreationsItemGroup.tab).maxStackSize(1));
 			setRegistryName("infernals_vengance");
 		}
 

@@ -2,9 +2,9 @@
   "_fv": 18,
   "_type": "gun",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "chaoticatts_smg",
-    "customModelName": "Normal",
+    "customModelName": "infinitesmg:default",
     "name": "Infinite Smg",
     "specialInfo": [
       "Hand Crafted by ChaotiCatt himself This smg is an example of fine craftsmanship."

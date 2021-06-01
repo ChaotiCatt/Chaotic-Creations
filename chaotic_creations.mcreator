@@ -1029,6 +1029,15 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "chaotic_portal_gui"
+    },
+    {
+      "name": "Cerberus",
+      "type": "mob",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cerberus"
     }
   ],
   "variable_elements": [],
@@ -1039,6 +1048,7 @@
       "item.chaotic_creations.odinmain": "Odinmain",
       "item.chaotic_creations.pistol_mercenary_spawn_egg": "Pistol Mercenary Spawn Egg",
       "item.minecraft.splash_potion.effect.redstone_vortex": "Splash Redstone Vortex",
+      "entity.chaotic_creations.cerberus": "Cerberus",
       "item.chaotic_creations.eternal_flame_2_d": "Eternal Flame",
       "item.chaotic_creations.basicbulletgun": "Basicbulletgun",
       "item.minecraft.lingering_potion.effect.redstone_vortex": "Lingering Redstone Vortex",
@@ -1049,6 +1059,7 @@
       "block.chaotic_creations.chaotic_cluster": "Chaotic Cluster",
       "item.minecraft.potion.effect.redstone_conduit": "Redstone Conduit",
       "item.chaotic_creations.mastery_token": "Mastery Token",
+      "item.chaotic_creations.cerberus_spawn_egg": "Cerberus Spawn Egg",
       "block.chaotic_creations.chaotic_portal": "Chaotic Portal",
       "itemGroup.tabchaotic_creations": "Chaotic Creations",
       "item.chaotic_creations.fang_tech_f_612": "FangTech F612",
