@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "chaotic_creations:trust"
+  },
+  "addition": {
+    "item": "chaotic_creations:mastery_token"
+  },
+  "result": {
+    "item": "chaotic_creations:trust_adept"
+  }
+}

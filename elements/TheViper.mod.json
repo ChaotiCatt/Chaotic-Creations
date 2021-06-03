@@ -2,9 +2,9 @@
   "_fv": 18,
   "_type": "gun",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "the_viper",
-    "customModelName": "Normal",
+    "customModelName": "theviper:default",
     "name": "The Viper",
     "specialInfo": [
       "The gun radiates toxic fumes..."
@@ -22,7 +22,7 @@
       "value": "entity.generic.explode"
     },
     "hasGlow": false,
-    "animation": "bow",
+    "animation": "none",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "onRangedItemUsed": {

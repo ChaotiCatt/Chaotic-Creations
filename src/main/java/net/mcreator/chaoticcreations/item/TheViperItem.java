@@ -82,7 +82,7 @@ public class TheViperItem extends ChaoticCreationsModElements.ModElement {
 
 		@Override
 		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.BOW;
+			return UseAction.NONE;
 		}
 
 		@Override

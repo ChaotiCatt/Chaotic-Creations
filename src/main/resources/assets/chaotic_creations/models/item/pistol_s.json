@@ -1,6 +1,0 @@
-{
-  "parent": "chaotic_creations:custom/pistols",
-  "textures": {
-    "particle": "chaotic_creations:items/no"
-  }
-}

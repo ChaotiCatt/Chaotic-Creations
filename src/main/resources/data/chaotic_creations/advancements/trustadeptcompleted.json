@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "chaotic_creations:trust_adept"
+    },
+    "title": {
+      "translate": "advancements.trustadeptcompleted.title"
+    },
+    "description": {
+      "translate": "advancements.trustadeptcompleted.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "trustadeptcompleted": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "chaotic_creations:trust_adept",
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 500
+  },
+  "parent": "chaotic_creations:it_begins"
+}

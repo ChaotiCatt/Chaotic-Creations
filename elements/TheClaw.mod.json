@@ -19,7 +19,7 @@
     "shootConstantly": false,
     "usageCount": 0,
     "actionSound": {
-      "value": "entity.firework.large_blast"
+      "value": "entity.firework.blast"
     },
     "hasGlow": false,
     "animation": "none",

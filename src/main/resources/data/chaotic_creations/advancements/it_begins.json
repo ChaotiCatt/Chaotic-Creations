@@ -1,0 +1,29 @@
+{
+  "display": {
+    "background": "chaotic_creations:textures/chaotic_portal_top.png",
+    "icon": {
+      "item": "chaotic_creations:trust_adept"
+    },
+    "title": {
+      "translate": "advancements.it_begins.title"
+    },
+    "description": {
+      "translate": "advancements.it_begins.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "it_begins": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "minecraft:overworld"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 1
+  }
+}

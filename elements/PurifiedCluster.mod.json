@@ -2,7 +2,7 @@
   "_fv": 18,
   "_type": "block",
   "definition": {
-    "texture": "chaotic_cluster",
+    "texture": "purified_cluster",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
@@ -11,7 +11,7 @@
     "renderType": 11,
     "customModelName": "Single texture",
     "rotationMode": 0,
-    "emissiveRendering": true,
+    "emissiveRendering": false,
     "displayFluidOverlay": false,
     "itemTexture": "",
     "particleTexture": "",
@@ -32,10 +32,8 @@
         "subtract": false
       }
     ],
-    "name": "Chaotic Cluster",
-    "specialInfo": [
-      "The chaotic energy is blinding..."
-    ],
+    "name": "Purified Cluster",
+    "specialInfo": [],
     "hardness": 1.0,
     "resistance": 10.0,
     "hasGravity": false,
@@ -43,9 +41,9 @@
     "creativeTab": {
       "value": "CUSTOM:ChaoticCreations"
     },
-    "destroyTool": "pickaxe",
+    "destroyTool": "Not specified",
     "customDrop": {
-      "value": "CUSTOM:ChaoticEnergy"
+      "value": "CUSTOM:PurifiedEnergy"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -64,11 +62,7 @@
       "value": ""
     },
     "offsetType": "NONE",
-    "aiPathNodeType": "LAVA",
-    "beaconColorModifier": {
-      "value": -10354688,
-      "falpha": 0.0
-    },
+    "aiPathNodeType": "DEFAULT",
     "flammability": 0,
     "fireSpreadSpeed": 0,
     "isLadder": false,
@@ -78,19 +72,19 @@
     "reactionToPushing": "NORMAL",
     "isNotColidable": false,
     "soundOnStep": {
-      "value": "BASALT"
+      "value": "STONE"
     },
-    "luminance": 1,
+    "luminance": 0,
     "unbreakable": false,
     "breakHarvestLevel": 1,
-    "spawnParticles": true,
+    "spawnParticles": false,
     "particleToSpawn": {
-      "value": "CRIMSON_SPORE"
+      "value": "EXPLOSION_NORMAL"
     },
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
-    "hasInventory": true,
+    "hasInventory": false,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
     "inventorySize": 9,
@@ -111,7 +105,7 @@
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.STONE#0"
+        "value": "Blocks.STONE"
       }
     ],
     "frequencyPerChunks": 1,

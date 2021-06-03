@@ -82,7 +82,7 @@ public class InfernalsVenganceItem extends ChaoticCreationsModElements.ModElemen
 
 		@Override
 		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.BOW;
+			return UseAction.NONE;
 		}
 
 		@Override

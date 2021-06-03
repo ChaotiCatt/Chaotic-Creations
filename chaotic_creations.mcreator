@@ -957,15 +957,6 @@
       "registry_name": "br_mercenary"
     },
     {
-      "name": "PistolS",
-      "type": "gun",
-      "sortid": 63,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "pistol_s"
-    },
-    {
       "name": "OdinEntityDies",
       "type": "procedure",
       "sortid": 64,
@@ -1038,13 +1029,84 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "cerberus"
+    },
+    {
+      "name": "Adepttrust",
+      "type": "procedure",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "adepttrust",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TrustAdept",
+      "type": "tool",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trust_adept"
+    },
+    {
+      "name": "PurifiedCluster",
+      "type": "block",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "purified_cluster"
+    },
+    {
+      "name": "Trustupgrade",
+      "type": "recipe",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trustupgrade"
+    },
+    {
+      "name": "ItBegins",
+      "type": "achievement",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "it_begins"
+    },
+    {
+      "name": "Trustadeptcompleted",
+      "type": "achievement",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trustadeptcompleted"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.chaotic_creations.pistol_s": "Pistol S",
+      "advancements.trustadeptcompleted.title": "Redstone and Metal",
+      "item.chaotic_creations.trust_adept": "Trust",
       "item.chaotic_creations.odinmain": "Odinmain",
       "item.chaotic_creations.pistol_mercenary_spawn_egg": "Pistol Mercenary Spawn Egg",
       "item.minecraft.splash_potion.effect.redstone_vortex": "Splash Redstone Vortex",
@@ -1057,12 +1119,14 @@
       "biome.chaotic_creations.deep_corruption": "Deep Corruption",
       "block.chaotic_creations.sky_lamp_1": "Sky Lamp 1",
       "block.chaotic_creations.chaotic_cluster": "Chaotic Cluster",
+      "advancements.trustadeptcompleted.descr": "Combine trust with a mastery token and claim your prize.",
       "item.minecraft.potion.effect.redstone_conduit": "Redstone Conduit",
       "item.chaotic_creations.mastery_token": "Mastery Token",
       "item.chaotic_creations.cerberus_spawn_egg": "Cerberus Spawn Egg",
       "block.chaotic_creations.chaotic_portal": "Chaotic Portal",
       "itemGroup.tabchaotic_creations": "Chaotic Creations",
       "item.chaotic_creations.fang_tech_f_612": "FangTech F612",
+      "advancements.it_begins.descr": "Step into the world of Chaotic Creations.",
       "entity.chaotic_creations.corrupted": "Corrupted",
       "item.chaotic_creations.eternal_flame_shockwave": "Eternal Flame Shockwave",
       "item.chaotic_creations.cumbustion_vulpine_world_wide_web_browser": "Combustion Vulpine World Wide Web Browser",
@@ -1080,6 +1144,7 @@
       "item.chaotic_creations.eternal_flame": "Eternal Flame",
       "item.chaotic_creations.chaotic_energy": "Chaotic Energy",
       "item.chaotic_creations.infinite_smg": "Infinite Smg",
+      "block.chaotic_creations.purified_cluster": "Purified Cluster",
       "item.chaotic_creations.odin_spawn_egg": "Odin Spawn Egg",
       "effect.redstone_conduit": "Redstone Conduit",
       "item.minecraft.tipped_arrow.effect.redstone_vortex": "Arrow of Redstone Vortex",
@@ -1100,6 +1165,7 @@
       "item.chaotic_creations.finaldimension": "Finaldimension Portal Igniter",
       "item.chaotic_creations.corrupted_spawn_egg": "Corrupted Spawn Egg",
       "effect.redstone_vortex": "Redstone Vortex",
+      "advancements.it_begins.title": "Chaotic Creations",
       "item.chaotic_creations.magnumrounds": "Magnum Rounds",
       "block.chaotic_creations.supply_crate": "Supply Crate",
       "biome.chaotic_creations.corruption": "Corruption",

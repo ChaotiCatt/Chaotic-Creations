@@ -22,7 +22,7 @@
       "value": "entity.ghast.shoot"
     },
     "hasGlow": false,
-    "animation": "bow",
+    "animation": "none",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "onRangedItemUsed": {
