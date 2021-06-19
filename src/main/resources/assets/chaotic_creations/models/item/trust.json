@@ -1,7 +1,7 @@
 {
   "parent": "chaotic_creations:custom/trust",
   "textures": {
-    "0": "chaotic_creations:blocks/trust",
+    "0": "chaotic_creations:blocks/trustadept",
     "particle": "chaotic_creations:items/trust"
   }
 }

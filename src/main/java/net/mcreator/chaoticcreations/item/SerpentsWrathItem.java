@@ -50,7 +50,7 @@ public class SerpentsWrathItem extends ChaoticCreationsModElements.ModElement {
 			}
 
 			public int getEnchantability() {
-				return 15;
+				return 13;
 			}
 
 			public Ingredient getRepairMaterial() {

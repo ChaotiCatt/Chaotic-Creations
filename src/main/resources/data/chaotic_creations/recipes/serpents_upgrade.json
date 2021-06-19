@@ -1,0 +1,16 @@
+{
+  "group": "chaotic_creations",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "chaotic_creations:mastery_token"
+    },
+    {
+      "item": "chaotic_creations:serpents_wrath"
+    }
+  ],
+  "result": {
+    "item": "chaotic_creations:serpents_wrath_adept",
+    "count": 1
+  }
+}

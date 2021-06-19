@@ -2,9 +2,9 @@
   "_fv": 18,
   "_type": "gun",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "br",
-    "customModelName": "Normal",
+    "customModelName": "f612:default",
     "name": "FangTech F612",
     "specialInfo": [],
     "creativeTab": {

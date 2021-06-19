@@ -2,9 +2,9 @@
   "_fv": 18,
   "_type": "gun",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "infernals_vengance",
-    "customModelName": "Normal",
+    "customModelName": "infernalsvengance:default",
     "name": "Infernals Vengance",
     "specialInfo": [
       "Representative of the anger of past users of the gun..."

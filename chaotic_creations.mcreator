@@ -1099,21 +1099,287 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "trustadeptcompleted"
+    },
+    {
+      "name": "Trustfound",
+      "type": "achievement",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trustfound"
+    },
+    {
+      "name": "InfernalsVengance2d",
+      "type": "gun",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infernals_vengance_2d"
+    },
+    {
+      "name": "FinalTeleporter",
+      "type": "item",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "final_teleporter"
+    },
+    {
+      "name": "FinalTeleporterRightClickedInAir",
+      "type": "procedure",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "final_teleporter_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SuperconcentratedChaos",
+      "type": "item",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "superconcentrated_chaos"
+    },
+    {
+      "name": "Finalteleporterrecipie",
+      "type": "recipe",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "finalteleporterrecipie"
+    },
+    {
+      "name": "Viewer",
+      "type": "mob",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "viewer"
+    },
+    {
+      "name": "Finalbiome",
+      "type": "biome",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "finalbiome"
+    },
+    {
+      "name": "FinaldimensionPlayerEntersDimension",
+      "type": "procedure",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "finaldimension_player_enters_dimension",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LemonFoodEaten",
+      "type": "procedure",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lemon_food_eaten",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Lemon",
+      "type": "food",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lemon"
+    },
+    {
+      "name": "HammerofMight",
+      "type": "tool",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hammerof_might"
+    },
+    {
+      "name": "HammerofMightLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hammerof_might_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SerpentsWrathAdept",
+      "type": "tool",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_wrath_adept"
+    },
+    {
+      "name": "SerpentsUpgrade",
+      "type": "recipe",
+      "sortid": 89,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_upgrade"
+    },
+    {
+      "name": "SerpentsWrathAdeptLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_wrath_adept_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SerpentsProjectileBulletHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_projectile_bullet_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SerpentsProjectile",
+      "type": "gun",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_projectile"
+    },
+    {
+      "name": "E2",
+      "type": "item",
+      "sortid": 92,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "e_2"
+    },
+    {
+      "name": "SerpentsWrathAdeptRightClickedInAir",
+      "type": "procedure",
+      "sortid": 93,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_wrath_adept_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "finalbosskilled",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    }
+  ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
       "advancements.trustadeptcompleted.title": "Redstone and Metal",
-      "item.chaotic_creations.trust_adept": "Trust",
+      "item.chaotic_creations.infernals_vengance_2d": "Infernals Vengance",
+      "item.chaotic_creations.trust_adept": "Trust (Adept)",
       "item.chaotic_creations.odinmain": "Odinmain",
+      "item.chaotic_creations.superconcentrated_chaos": "Superconcentrated Chaos",
+      "item.chaotic_creations.serpents_wrath_adept": "Serpent\u0027s Wrath (Adept)",
       "item.chaotic_creations.pistol_mercenary_spawn_egg": "Pistol Mercenary Spawn Egg",
       "item.minecraft.splash_potion.effect.redstone_vortex": "Splash Redstone Vortex",
       "entity.chaotic_creations.cerberus": "Cerberus",
       "item.chaotic_creations.eternal_flame_2_d": "Eternal Flame",
-      "item.chaotic_creations.basicbulletgun": "Basicbulletgun",
       "item.minecraft.lingering_potion.effect.redstone_vortex": "Lingering Redstone Vortex",
+      "item.chaotic_creations.basicbulletgun": "Basicbulletgun",
       "item.minecraft.tipped_arrow.effect.redstone_conduit": "Arrow of Redstone Conduit",
       "item.chaotic_creations.pistol": "FangTech P16",
       "biome.chaotic_creations.deep_corruption": "Deep Corruption",
@@ -1121,6 +1387,7 @@
       "block.chaotic_creations.chaotic_cluster": "Chaotic Cluster",
       "advancements.trustadeptcompleted.descr": "Combine trust with a mastery token and claim your prize.",
       "item.minecraft.potion.effect.redstone_conduit": "Redstone Conduit",
+      "advancements.trustfound.title": "Trust",
       "item.chaotic_creations.mastery_token": "Mastery Token",
       "item.chaotic_creations.cerberus_spawn_egg": "Cerberus Spawn Egg",
       "block.chaotic_creations.chaotic_portal": "Chaotic Portal",
@@ -1132,6 +1399,7 @@
       "item.chaotic_creations.cumbustion_vulpine_world_wide_web_browser": "Combustion Vulpine World Wide Web Browser",
       "entity.chaotic_creations.br_mercenary": "BR Mercenary",
       "item.minecraft.potion.effect.redstone_vortex": "Redstone Vortex",
+      "item.chaotic_creations.hammerof_might": "Hammerof Might",
       "itemGroup.tabchaotic_items": "Chaotic Items",
       "item.minecraft.lingering_potion.effect.redstone_conduit": "Lingering Redstone Conduit",
       "item.chaotic_creations.corrupted_realm": "Corrupted Energy",
@@ -1142,10 +1410,12 @@
       "item.chaotic_creations.e_1": "E 1",
       "item.chaotic_creations.purified_energy": "Purified Energy",
       "item.chaotic_creations.eternal_flame": "Eternal Flame",
+      "item.chaotic_creations.e_2": "E 2",
       "item.chaotic_creations.chaotic_energy": "Chaotic Energy",
       "item.chaotic_creations.infinite_smg": "Infinite Smg",
       "block.chaotic_creations.purified_cluster": "Purified Cluster",
       "item.chaotic_creations.odin_spawn_egg": "Odin Spawn Egg",
+      "biome.chaotic_creations.finalbiome": "Finalbiome",
       "effect.redstone_conduit": "Redstone Conduit",
       "item.minecraft.tipped_arrow.effect.redstone_vortex": "Arrow of Redstone Vortex",
       "item.chaotic_creations.br_mercenary_spawn_egg": "BR Mercenary Spawn Egg",
@@ -1153,6 +1423,7 @@
       "item.chaotic_creations.odinlightningattack": "Odinlightningattack",
       "block.chaotic_creations.nullstone": "Nullstone",
       "item.chaotic_creations.the_claw": "The Claw",
+      "item.chaotic_creations.lemon": "Lemon",
       "item.chaotic_creations.food_bar": "Food Bar",
       "item.chaotic_creations.mining_beam": "Mining Beam",
       "entity.chaotic_creations.pistol_mercenary": "Pistol Mercenary",
@@ -1164,10 +1435,15 @@
       "item.chaotic_creations.mining_beam_laser": "Mining Beam Laser",
       "item.chaotic_creations.finaldimension": "Finaldimension Portal Igniter",
       "item.chaotic_creations.corrupted_spawn_egg": "Corrupted Spawn Egg",
+      "advancements.trustfound.descr": "Find Trust",
       "effect.redstone_vortex": "Redstone Vortex",
       "advancements.it_begins.title": "Chaotic Creations",
+      "entity.chaotic_creations.viewer": "Viewer",
       "item.chaotic_creations.magnumrounds": "Magnum Rounds",
+      "item.chaotic_creations.final_teleporter": "Final Teleporter",
       "block.chaotic_creations.supply_crate": "Supply Crate",
+      "item.chaotic_creations.viewer_spawn_egg": "Viewer Spawn Egg",
+      "item.chaotic_creations.serpents_projectile": "Serpents Projectile",
       "biome.chaotic_creations.corruption": "Corruption",
       "item.chaotic_creations.combat_knife": "Combat Knife"
     }

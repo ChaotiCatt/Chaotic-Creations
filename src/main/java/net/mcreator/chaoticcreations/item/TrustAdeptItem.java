@@ -2,8 +2,6 @@
 package net.mcreator.chaoticcreations.item;
 
 import net.minecraftforge.registries.ObjectHolder;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.World;
 import net.minecraft.util.text.StringTextComponent;
@@ -80,12 +78,6 @@ public class TrustAdeptItem extends ChaoticCreationsModElements.ModElement {
 					AdepttrustProcedure.executeProcedure($_dependencies);
 				}
 				return retval;
-			}
-
-			@Override
-			@OnlyIn(Dist.CLIENT)
-			public boolean hasEffect(ItemStack itemstack) {
-				return true;
 			}
 		}.setRegistryName("trust_adept"));
 	}

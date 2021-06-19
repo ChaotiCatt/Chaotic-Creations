@@ -2,9 +2,9 @@
   "_fv": 18,
   "_type": "gun",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "basic_pistol",
-    "customModelName": "Normal",
+    "customModelName": "p16:default",
     "name": "FangTech P16",
     "specialInfo": [],
     "creativeTab": {

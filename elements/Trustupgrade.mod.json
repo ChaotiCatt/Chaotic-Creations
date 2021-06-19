@@ -2,19 +2,42 @@
   "_fv": 18,
   "_type": "recipe",
   "definition": {
-    "recipeType": "Smithing",
+    "recipeType": "Crafting",
     "xpReward": 0.0,
     "cookingTime": 200,
     "recipeRetstackSize": 1,
     "group": "",
-    "recipeShapeless": false,
-    "smithingInputStack": {
-      "value": "CUSTOM:Trust"
-    },
-    "smithingInputAdditionStack": {
-      "value": "CUSTOM:MasteryToken"
-    },
-    "smithingReturnStack": {
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:MasteryToken"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Trust"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
       "value": "CUSTOM:TrustAdept"
     },
     "name": "trustupgrade",

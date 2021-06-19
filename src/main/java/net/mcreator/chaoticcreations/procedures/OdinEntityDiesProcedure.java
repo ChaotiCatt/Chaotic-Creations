@@ -1,6 +1,5 @@
 package net.mcreator.chaoticcreations.procedures;
 
-import net.minecraftforge.fml.server.ServerLifecycleHooks;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -9,12 +8,8 @@ import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.Explosion;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.ChatType;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.Util;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.entity.EntityType;
 
@@ -177,13 +172,6 @@ public class OdinEntityDiesProcedure extends ChaoticCreationsModElements.ModElem
 											private void run() {
 												if (world instanceof World && !((World) world).isRemote) {
 													((World) world).createExplosion(null, (int) x, (int) y, (int) z, (float) 10, Explosion.Mode.NONE);
-												}
-												if (!world.isRemote()) {
-													MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
-													if (mcserv != null)
-														mcserv.getPlayerList().func_232641_a_(
-																new StringTextComponent("The Wolves seek to crown a new king....."), ChatType.SYSTEM,
-																Util.DUMMY_UUID);
 												}
 												MinecraftForge.EVENT_BUS.unregister(this);
 											}
