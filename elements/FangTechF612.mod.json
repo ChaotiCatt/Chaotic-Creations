@@ -1,0 +1,40 @@
+{
+  "_fv": 18,
+  "_type": "gun",
+  "definition": {
+    "renderType": 1,
+    "texture": "br",
+    "customModelName": "f612:default",
+    "name": "FangTech F612",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:ChaoticCreations"
+    },
+    "stackSize": 1,
+    "ammoItem": {
+      "value": "CUSTOM:Riflerounds1"
+    },
+    "shootConstantly": false,
+    "usageCount": 0,
+    "actionSound": {
+      "value": "entity.firework.blast"
+    },
+    "hasGlow": false,
+    "animation": "none",
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "onRangedItemUsed": {
+      "name": "FangTechF612RangedItemUsed"
+    },
+    "bulletPower": 9.0,
+    "bulletDamage": 0.5,
+    "bulletKnockback": 2,
+    "bulletParticles": false,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": "Items.GOLD_NUGGET"
+    },
+    "bulletModel": "Default",
+    "customBulletModelTexture": ""
+  }
+}

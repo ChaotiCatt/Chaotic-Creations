@@ -13,6 +13,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -45,6 +46,8 @@ public class ChaoticCreationsModElements {
 	public final List<Supplier<Enchantment>> enchantments = new ArrayList<>();
 	public static Map<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new HashMap<>();
 	public ChaoticCreationsModElements() {
+		sounds.put(new ResourceLocation("chaotic_creations", "heavy_sniper"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("chaotic_creations", "heavy_sniper")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("chaotic_creations").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();
@@ -60,6 +63,7 @@ public class ChaoticCreationsModElements {
 		}
 		Collections.sort(elements);
 		elements.forEach(ChaoticCreationsModElements.ModElement::initElements);
+		MinecraftForge.EVENT_BUS.register(new ChaoticCreationsModVariables(this));
 	}
 
 	public void registerSounds(RegistryEvent.Register<net.minecraft.util.SoundEvent> event) {

@@ -1,0 +1,7 @@
+{
+  "parent": "chaotic_creations:custom/f612",
+  "textures": {
+    "0": "chaotic_creations:blocks/f612",
+    "particle": "chaotic_creations:items/br"
+  }
+}

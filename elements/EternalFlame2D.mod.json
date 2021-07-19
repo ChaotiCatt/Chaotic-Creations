@@ -1,0 +1,36 @@
+{
+  "_fv": 18,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "eternal_flame",
+    "customModelName": "Normal",
+    "name": "Eternal Flame",
+    "specialInfo": [
+      "It's hotter than the sun",
+      "touching this will kill those who aren't worthy..."
+    ],
+    "creativeTab": {
+      "value": "CUSTOM:ChaoticCreations"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 5,
+    "efficiency": 999.0,
+    "attackSpeed": 5.0,
+    "enchantability": 15,
+    "damageVsEntity": 6.0,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "EternalFlameRightClickedInAir"
+    },
+    "onEntityHitWith": {
+      "name": "EternalFlameLivingEntityIsHitWithTool"
+    }
+  }
+}

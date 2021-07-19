@@ -45,10 +45,10 @@
     },
     "destroyTool": "pickaxe",
     "customDrop": {
-      "value": ""
+      "value": "CUSTOM:ChaoticEnergy"
     },
     "dropAmount": 1,
-    "useLootTableForDrops": true,
+    "useLootTableForDrops": false,
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canProvidePower": false,
@@ -90,7 +90,7 @@
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
-    "hasInventory": false,
+    "hasInventory": true,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,
     "inventorySize": 9,
@@ -111,15 +111,12 @@
     "restrictionBiomes": [],
     "blocksToReplace": [
       {
-        "value": "Blocks.EMERALD_ORE"
-      },
-      {
-        "value": "Blocks.DIAMOND_ORE"
+        "value": "Blocks.STONE#0"
       }
     ],
     "frequencyPerChunks": 1,
     "frequencyOnChunk": 1,
     "minGenerateHeight": 0,
-    "maxGenerateHeight": 64
+    "maxGenerateHeight": 13
   }
 }

@@ -25,10 +25,10 @@ public class OdinRenderer {
 		@OnlyIn(Dist.CLIENT)
 		public void registerModels(ModelRegistryEvent event) {
 			RenderingRegistry.registerEntityRenderingHandler(OdinEntity.entity, renderManager -> {
-				return new MobRenderer(renderManager, new Modelcustom_model(), 0.7f) {
+				return new MobRenderer(renderManager, new Modeldahw9iofn(), 0.7f) {
 					@Override
 					public ResourceLocation getEntityTexture(Entity entity) {
-						return new ResourceLocation("chaotic_creations:textures/odintextures.png");
+						return new ResourceLocation("chaotic_creations:textures/llas.png");
 					}
 				};
 			});
@@ -38,7 +38,7 @@ public class OdinRenderer {
 	// Made with Blockbench 3.8.4
 	// Exported for Minecraft version 1.15 - 1.16
 	// Paste this class into your mod and generate all required imports
-	public static class Modelcustom_model extends EntityModel<Entity> {
+	public static class Modeldahw9iofn extends EntityModel<Entity> {
 		private final ModelRenderer head;
 		private final ModelRenderer cube_r1;
 		private final ModelRenderer cube_r2;
@@ -50,7 +50,7 @@ public class OdinRenderer {
 		private final ModelRenderer leg2;
 		private final ModelRenderer leg3;
 		private final ModelRenderer tail;
-		public Modelcustom_model() {
+		public Modeldahw9iofn() {
 			textureWidth = 64;
 			textureHeight = 64;
 			head = new ModelRenderer(this);

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "chaotic_creations:blocks/sky_stone",
+    "up": "chaotic_creations:blocks/sky_grass_2",
+    "north": "chaotic_creations:blocks/sky_grass_1",
+    "east": "chaotic_creations:blocks/sky_grass_1",
+    "south": "chaotic_creations:blocks/sky_grass_1",
+    "west": "chaotic_creations:blocks/sky_grass_1",
+    "particle": "chaotic_creations:blocks/sky_stone"
+  }
+}

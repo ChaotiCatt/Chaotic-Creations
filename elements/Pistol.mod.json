@@ -2,17 +2,17 @@
   "_fv": 18,
   "_type": "gun",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "basic_pistol",
-    "customModelName": "Normal",
-    "name": "Pistol",
+    "customModelName": "p16:default",
+    "name": "FangTech P16",
     "specialInfo": [],
     "creativeTab": {
       "value": "CUSTOM:ChaoticCreations"
     },
     "stackSize": 1,
     "ammoItem": {
-      "value": ""
+      "value": "CUSTOM:Magnumrounds"
     },
     "shootConstantly": false,
     "usageCount": 0,
@@ -24,7 +24,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "bulletPower": 9.0,
-    "bulletDamage": 1.0,
+    "bulletDamage": 0.2,
     "bulletKnockback": 5,
     "bulletParticles": false,
     "bulletIgnitesFire": false,

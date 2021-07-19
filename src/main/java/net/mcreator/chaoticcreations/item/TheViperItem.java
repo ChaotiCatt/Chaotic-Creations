@@ -82,7 +82,7 @@ public class TheViperItem extends ChaoticCreationsModElements.ModElement {
 
 		@Override
 		public UseAction getUseAction(ItemStack itemstack) {
-			return UseAction.BOW;
+			return UseAction.NONE;
 		}
 
 		@Override
@@ -110,7 +110,7 @@ public class TheViperItem extends ChaoticCreationsModElements.ModElement {
 						}
 					}
 					if (entity.abilities.isCreativeMode || stack != ItemStack.EMPTY) {
-						ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 6, 5);
+						ArrowCustomEntity entityarrow = shoot(world, entity, random, 9f, 4, 5);
 						itemstack.damageItem(1, entity, e -> e.sendBreakAnimation(entity.getActiveHand()));
 						if (entity.abilities.isCreativeMode) {
 							entityarrow.pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
@@ -242,7 +242,7 @@ public class TheViperItem extends ChaoticCreationsModElements.ModElement {
 		double d3 = target.getPosZ() - entity.getPosZ();
 		entityarrow.shoot(d1, d0 - entityarrow.getPosY() + (double) MathHelper.sqrt(d1 * d1 + d3 * d3) * 0.2F, d3, 9f * 2, 12.0F);
 		entityarrow.setSilent(true);
-		entityarrow.setDamage(6);
+		entityarrow.setDamage(4);
 		entityarrow.setKnockbackStrength(5);
 		entityarrow.setIsCritical(false);
 		entity.world.addEntity(entityarrow);

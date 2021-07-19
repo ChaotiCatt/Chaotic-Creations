@@ -1,24 +1,11 @@
 package net.mcreator.chaoticcreations.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.particles.ParticleTypes;
-
-import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
-import net.mcreator.chaoticcreations.ChaoticCreationsMod;
-
-import java.util.Map;
-
 @ChaoticCreationsModElements.ModElement.Tag
 public class BlazenKatanaEntitySwingsItemProcedure extends ChaoticCreationsModElements.ModElement {
+
 	public BlazenKatanaEntitySwingsItemProcedure(ChaoticCreationsModElements instance) {
 		super(instance, 50);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -42,10 +29,12 @@ public class BlazenKatanaEntitySwingsItemProcedure extends ChaoticCreationsModEl
 				ChaoticCreationsMod.LOGGER.warn("Failed to load dependency world for procedure BlazenKatanaEntitySwingsItem!");
 			return;
 		}
+
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
+
 		if (world instanceof World && !world.isRemote()) {
 			((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
 					(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.blaze.ambient")),
@@ -58,5 +47,7 @@ public class BlazenKatanaEntitySwingsItemProcedure extends ChaoticCreationsModEl
 		if (world instanceof ServerWorld) {
 			((ServerWorld) world).spawnParticle(ParticleTypes.FLAME, x, y, z, (int) 5, 3, 3, 3, 1);
 		}
+
 	}
+
 }

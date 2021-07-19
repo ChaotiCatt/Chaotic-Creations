@@ -40,12 +40,15 @@ import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.CreatureAttribute;
 
+import net.mcreator.chaoticcreations.procedures.OdinEntityDiesProcedure;
 import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
 import net.mcreator.chaoticcreations.item.OdinmainItem;
 import net.mcreator.chaoticcreations.entity.renderer.OdinRenderer;
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 
 import java.util.Random;
+import java.util.Map;
+import java.util.HashMap;
 
 @ChaoticCreationsModElements.ModElement.Tag
 public class OdinEntity extends ChaoticCreationsModElements.ModElement {
@@ -61,7 +64,7 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.entities.add(() -> entity);
-		elements.items.add(() -> new SpawnEggItem(entity, -15263977, -65536, new Item.Properties().group(ChaoticCreationsItemGroup.tab))
+		elements.items.add(() -> new SpawnEggItem(entity, -7500403, -7680, new Item.Properties().group(ChaoticCreationsItemGroup.tab))
 				.setRegistryName("odin_spawn_egg"));
 	}
 
@@ -158,6 +161,24 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 			if (source.getDamageType().equals("witherSkull"))
 				return false;
 			return super.attackEntityFrom(source, amount);
+		}
+
+		@Override
+		public void onDeath(DamageSource source) {
+			super.onDeath(source);
+			double x = this.getPosX();
+			double y = this.getPosY();
+			double z = this.getPosZ();
+			Entity sourceentity = source.getTrueSource();
+			Entity entity = this;
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				OdinEntityDiesProcedure.executeProcedure($_dependencies);
+			}
 		}
 
 		public void livingTick() {

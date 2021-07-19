@@ -31,7 +31,7 @@ public class ChaoticEnergyItem extends ChaoticCreationsModElements.ModElement {
 	}
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
-			super(new Item.Properties().group(ChaoticItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.EPIC));
+			super(new Item.Properties().group(ChaoticItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.RARE));
 			setRegistryName("chaotic_energy");
 		}
 

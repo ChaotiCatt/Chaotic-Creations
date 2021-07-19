@@ -1,0 +1,7 @@
+{
+  "parent": "chaotic_creations:custom/infinitesmg",
+  "textures": {
+    "0": "chaotic_creations:blocks/infininitesmg",
+    "particle": "chaotic_creations:items/chaoticatts_smg"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "_fv": 18,
+  "_type": "gun",
+  "definition": {
+    "renderType": 1,
+    "texture": "no",
+    "customModelName": "eternity:default",
+    "name": "Eternity",
+    "specialInfo": [
+      "A heavy prototype from Orion and FangTech, this rifle's active camo generator helps",
+      "soldiers move to a new position after killing a target.",
+      "There is a note from the laboratory: Do not use this as a primary",
+      "you will blind yourself and your teamates",
+      "get a real primary."
+    ],
+    "creativeTab": {
+      "value": "CUSTOM:ChaoticCreations"
+    },
+    "stackSize": 1,
+    "ammoItem": {
+      "value": "CUSTOM:HeavyRifleRound"
+    },
+    "shootConstantly": false,
+    "usageCount": 0,
+    "actionSound": {
+      "value": "CUSTOM:heavy_sniper"
+    },
+    "hasGlow": false,
+    "animation": "none",
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "bulletPower": 8.0,
+    "bulletDamage": 6.0,
+    "bulletKnockback": 10,
+    "bulletParticles": false,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": "Items.GOLD_NUGGET"
+    },
+    "bulletModel": "Default",
+    "customBulletModelTexture": "",
+    "onBulletHitsEntity": {
+      "name": "EternityBulletHitsLivingEntity"
+    }
+  }
+}

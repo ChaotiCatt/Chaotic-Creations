@@ -49,7 +49,7 @@
     "particlesProbability": 0.5,
     "biomeCategory": "NONE",
     "parent": {
-      "value": "No parent"
+      "value": "CUSTOM:DeepCorruption"
     },
     "rainingPossibility": 0.5,
     "temperature": 0.5,

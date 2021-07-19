@@ -1,0 +1,32 @@
+{
+  "_fv": 18,
+  "_type": "tool",
+  "definition": {
+    "renderType": 1,
+    "texture": "no",
+    "customModelName": "hammerofmight:default",
+    "name": "Hammer of Might",
+    "specialInfo": [
+      "A mighty hammer forged in the depths of a mountain."
+    ],
+    "creativeTab": {
+      "value": "CUSTOM:ChaoticCreations"
+    },
+    "toolType": "Axe",
+    "harvestLevel": 1,
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 2,
+    "damageVsEntity": 7.0,
+    "usageCount": 100,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "HammerofMightLivingEntityIsHitWithTool"
+    }
+  }
+}

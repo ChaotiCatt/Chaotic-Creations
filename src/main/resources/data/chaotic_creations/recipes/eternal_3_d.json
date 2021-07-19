@@ -1,0 +1,16 @@
+{
+  "group": "chaotic_creations",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "chaotic_creations:deleted_mod_element"
+    }
+  },
+  "result": {
+    "item": "chaotic_creations:eternal_flame",
+    "count": 1
+  }
+}

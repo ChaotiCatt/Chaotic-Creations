@@ -2,9 +2,9 @@
   "_fv": 18,
   "_type": "gun",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "infernals_vengance",
-    "customModelName": "Normal",
+    "customModelName": "infernalsvengance:default",
     "name": "Infernals Vengance",
     "specialInfo": [
       "Representative of the anger of past users of the gun..."
@@ -17,19 +17,19 @@
       "value": "CUSTOM:Magnumrounds"
     },
     "shootConstantly": false,
-    "usageCount": 100,
+    "usageCount": 0,
     "actionSound": {
       "value": "entity.ghast.shoot"
     },
     "hasGlow": false,
-    "animation": "bow",
+    "animation": "none",
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "onRangedItemUsed": {
       "name": "InfernalsVenganceRangedItemUsed"
     },
     "bulletPower": 9.0,
-    "bulletDamage": 4.5,
+    "bulletDamage": 4.0,
     "bulletKnockback": 5,
     "bulletParticles": false,
     "bulletIgnitesFire": false,

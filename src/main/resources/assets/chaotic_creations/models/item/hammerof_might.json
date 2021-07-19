@@ -1,0 +1,7 @@
+{
+  "parent": "chaotic_creations:custom/hammerofmight",
+  "textures": {
+    "0": "chaotic_creations:blocks/hammerofmight",
+    "particle": "chaotic_creations:items/no"
+  }
+}

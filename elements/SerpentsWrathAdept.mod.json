@@ -1,0 +1,35 @@
+{
+  "_fv": 18,
+  "_type": "tool",
+  "definition": {
+    "renderType": 1,
+    "texture": "serpents_wrath",
+    "customModelName": "serpentswrathadept:default",
+    "name": "Serpent's Wrath (Adept)",
+    "specialInfo": [
+      "Like the bite of a Snake..."
+    ],
+    "creativeTab": {
+      "value": "CUSTOM:ChaoticCreations"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 1,
+    "efficiency": 4.0,
+    "attackSpeed": 2.0,
+    "enchantability": 13,
+    "damageVsEntity": 10.0,
+    "usageCount": 0,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "SerpentsWrathAdeptRightClickedInAir"
+    },
+    "onEntityHitWith": {
+      "name": "SerpentsWrathAdeptLivingEntityIsHitWithTool"
+    }
+  }
+}

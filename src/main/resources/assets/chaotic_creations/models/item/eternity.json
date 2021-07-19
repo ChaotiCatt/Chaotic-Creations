@@ -1,0 +1,7 @@
+{
+  "parent": "chaotic_creations:custom/eternity",
+  "textures": {
+    "0": "chaotic_creations:blocks/eternity",
+    "particle": "chaotic_creations:items/no"
+  }
+}

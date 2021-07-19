@@ -276,15 +276,6 @@
       "registry_name": "chaotic_cluster"
     },
     {
-      "name": "BlockChaoticCluster",
-      "type": "loottable",
-      "sortid": 15,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "block_chaotic_cluster"
-    },
-    {
       "name": "ChaoticEnergy",
       "type": "item",
       "sortid": 16,
@@ -570,15 +561,6 @@
       "registry_name": "chaotic_items"
     },
     {
-      "name": "Quests",
-      "type": "gui",
-      "sortid": 34,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "quests"
-    },
-    {
       "name": "ChaoticPortal",
       "type": "block",
       "sortid": 34,
@@ -586,39 +568,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "chaotic_portal"
-    },
-    {
-      "name": "ChaoticPortalOnBlockRightClicked",
-      "type": "procedure",
-      "sortid": 35,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "chaotic_portal_on_block_right_clicked",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
     },
     {
       "name": "PurifiedEnergy",
@@ -778,6 +727,23 @@
       "registry_name": "corruption"
     },
     {
+      "name": "BlazenKatanaRightClickedInAir2",
+      "type": "procedure",
+      "sortid": 49,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "blazen_katana_right_clicked_in_air_2",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
       "name": "BlazenKatanaRightClickedOnBlock",
       "type": "procedure",
       "sortid": 47,
@@ -785,6 +751,35 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "blazen_katana_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BlazenKatanaEntitySwingsItem",
+      "type": "procedure",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "blazen_katana_entity_swings_item",
       "metadata": {
         "dependencies": [
           {
@@ -824,13 +819,13 @@
       }
     },
     {
-      "name": "BlazenKatanaRightClickedInAir2",
+      "name": "LemonFoodEaten",
       "type": "procedure",
-      "sortid": 49,
+      "sortid": 85,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "blazen_katana_right_clicked_in_air_2",
+      "registry_name": "lemon_food_eaten",
       "metadata": {
         "dependencies": [
           {
@@ -841,13 +836,150 @@
       }
     },
     {
-      "name": "BlazenKatanaEntitySwingsItem",
-      "type": "procedure",
-      "sortid": 50,
+      "name": "Viewer",
+      "type": "mob",
+      "sortid": 81,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "blazen_katana_entity_swings_item",
+      "registry_name": "viewer"
+    },
+    {
+      "name": "Lemon",
+      "type": "food",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lemon"
+    },
+    {
+      "name": "E2",
+      "type": "item",
+      "sortid": 92,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "e_2"
+    },
+    {
+      "name": "FangTechF612",
+      "type": "gun",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fang_tech_f_612"
+    },
+    {
+      "name": "Finalbiome",
+      "type": "biome",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "finalbiome"
+    },
+    {
+      "name": "Basicbulletgun",
+      "type": "gun",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "basicbulletgun"
+    },
+    {
+      "name": "SerpentsProjectile",
+      "type": "gun",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_projectile"
+    },
+    {
+      "name": "FinalTeleporterRightClickedInAir",
+      "type": "procedure",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "final_teleporter_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Eternal2d",
+      "type": "recipe",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternal_2d"
+    },
+    {
+      "name": "Eternal3D",
+      "type": "recipe",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternal_3_d"
+    },
+    {
+      "name": "Nullstone",
+      "type": "block",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "nullstone"
+    },
+    {
+      "name": "CorruptConcentration",
+      "type": "item",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "corrupt_concentration"
+    },
+    {
+      "name": "CorruptedRealm",
+      "type": "dimension",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "corrupted_realm",
+      "metadata": {
+        "ep": false
+      }
+    },
+    {
+      "name": "BRMercenary",
+      "type": "mob",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "br_mercenary"
+    },
+    {
+      "name": "FinaldimensionPlayerEntersDimension",
+      "type": "procedure",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "finaldimension_player_enters_dimension",
       "metadata": {
         "dependencies": [
           {
@@ -868,48 +1000,737 @@
           }
         ]
       }
+    },
+    {
+      "name": "Infinitesmgused",
+      "type": "procedure",
+      "sortid": 51,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infinitesmgused",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Finalteleporterrecipie",
+      "type": "recipe",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "finalteleporterrecipie"
+    },
+    {
+      "name": "DKLNARightClickedInAir",
+      "type": "procedure",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dklna_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rocketrecipie",
+      "type": "recipe",
+      "sortid": 99,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rocketrecipie"
+    },
+    {
+      "name": "PistolMercenary",
+      "type": "mob",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pistol_mercenary"
+    },
+    {
+      "name": "EternityBulletHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternity_bullet_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FangTechF612RangedItemUsed",
+      "type": "procedure",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "fang_tech_f_612_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SerpentsWrathAdeptLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_wrath_adept_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HammerofMight",
+      "type": "tool",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hammerof_might"
+    },
+    {
+      "name": "SerpentsWrathAdept",
+      "type": "tool",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_wrath_adept"
+    },
+    {
+      "name": "GadgetWhileBulletFlyingTick",
+      "type": "procedure",
+      "sortid": 97,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gadget_while_bullet_flying_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Skygrass",
+      "type": "block",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "skygrass"
+    },
+    {
+      "name": "Gadget",
+      "type": "gun",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gadget"
+    },
+    {
+      "name": "Skystone",
+      "type": "block",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "skystone"
+    },
+    {
+      "name": "Riflerounds1",
+      "type": "item",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "riflerounds_1"
+    },
+    {
+      "name": "Finaldimension",
+      "type": "dimension",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "finaldimension",
+      "metadata": {
+        "ep": false
+      }
+    },
+    {
+      "name": "Riflerounds1recipie",
+      "type": "recipe",
+      "sortid": 102,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "riflerounds_1recipie"
+    },
+    {
+      "name": "SkyLamp1",
+      "type": "block",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sky_lamp_1"
+    },
+    {
+      "name": "Rocket",
+      "type": "item",
+      "sortid": 98,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rocket"
+    },
+    {
+      "name": "RocketItemIsDroppedByPlayer",
+      "type": "procedure",
+      "sortid": 100,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rocket_item_is_dropped_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TrustAdept",
+      "type": "tool",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trust_adept"
+    },
+    {
+      "name": "Trustupgrade",
+      "type": "recipe",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trustupgrade"
+    },
+    {
+      "name": "OdinEntityDies",
+      "type": "procedure",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "odin_entity_dies",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "InfernalsVengance2d",
+      "type": "gun",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infernals_vengance_2d"
+    },
+    {
+      "name": "ChaoticPortalGUI",
+      "type": "gui",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chaotic_portal_gui"
+    },
+    {
+      "name": "PurifiedCluster",
+      "type": "block",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "purified_cluster"
+    },
+    {
+      "name": "CorruptConcentrationRightClickedInAir",
+      "type": "procedure",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "corrupt_concentration_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Cerberus",
+      "type": "mob",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cerberus"
+    },
+    {
+      "name": "SerpentsWrathAdeptRightClickedInAir",
+      "type": "procedure",
+      "sortid": 93,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_wrath_adept_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SuperconcentratedChaos",
+      "type": "item",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "superconcentrated_chaos"
+    },
+    {
+      "name": "FinalTeleporter",
+      "type": "item",
+      "sortid": 78,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "final_teleporter"
+    },
+    {
+      "name": "GadgetRangedItemUsed",
+      "type": "procedure",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gadget_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Trustadeptcompleted",
+      "type": "achievement",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trustadeptcompleted"
+    },
+    {
+      "name": "TotemRecipie",
+      "type": "recipe",
+      "sortid": 94,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "totem_recipie"
+    },
+    {
+      "name": "Trustfound",
+      "type": "achievement",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "trustfound"
+    },
+    {
+      "name": "InfiniteSmg",
+      "type": "gun",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "infinite_smg"
+    },
+    {
+      "name": "Eternity",
+      "type": "gun",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternity"
+    },
+    {
+      "name": "Adepttrust",
+      "type": "procedure",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "adepttrust",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SerpentsProjectileBulletHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_projectile_bullet_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EternalFlame2D",
+      "type": "tool",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternal_flame_2_d"
+    },
+    {
+      "name": "Corrupted",
+      "type": "mob",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "corrupted"
+    },
+    {
+      "name": "SkyGarden1",
+      "type": "structure",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sky_garden_1"
+    },
+    {
+      "name": "HeavyRifleRound",
+      "type": "item",
+      "sortid": 103,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "heavy_rifle_round"
+    },
+    {
+      "name": "HeavyRIfleRoundRecipie",
+      "type": "recipe",
+      "sortid": 104,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "heavy_r_ifle_round_recipie"
+    },
+    {
+      "name": "HammerofMightLivingEntityIsHitWithTool",
+      "type": "procedure",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hammerof_might_living_entity_is_hit_with_tool",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GadgetBulletHitsBlock",
+      "type": "procedure",
+      "sortid": 96,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gadget_bullet_hits_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ItBegins",
+      "type": "achievement",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "it_begins"
+    },
+    {
+      "name": "SerpentsUpgrade",
+      "type": "recipe",
+      "sortid": 89,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "serpents_upgrade"
+    },
+    {
+      "name": "DeepCorruption",
+      "type": "biome",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "deep_corruption"
     }
   ],
-  "variable_elements": [],
-  "sound_elements": [],
+  "variable_elements": [
+    {
+      "name": "finalbosskilled",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    }
+  ],
+  "sound_elements": [
+    {
+      "name": "heavy_sniper",
+      "files": [
+        "heavy_sniper"
+      ],
+      "category": "master",
+      "subtitle": "Big Gunshot"
+    }
+  ],
   "language_map": {
     "en_us": {
+      "item.chaotic_creations.trust_adept": "Trust (Adept)",
+      "item.chaotic_creations.odinmain": "Odinmain",
+      "item.chaotic_creations.serpents_wrath_adept": "Serpent\u0027s Wrath (Adept)",
+      "item.minecraft.splash_potion.effect.redstone_vortex": "Splash Redstone Vortex",
+      "item.minecraft.lingering_potion.effect.redstone_vortex": "Lingering Redstone Vortex",
+      "item.minecraft.tipped_arrow.effect.redstone_conduit": "Arrow of Redstone Conduit",
+      "item.chaotic_creations.pistol": "Pistol",
+      "block.chaotic_creations.chaotic_cluster": "Chaotic Cluster",
+      "item.minecraft.potion.effect.redstone_conduit": "Redstone Conduit",
+      "item.chaotic_creations.mastery_token": "Mastery Token",
+      "itemGroup.tabchaotic_creations": "Chaotic Creations",
+      "block.chaotic_creations.chaotic_portal": "Chaotic Portal",
+      "item.chaotic_creations.fang_tech_f_612": "FangTech F612",
+      "item.chaotic_creations.rocket": "Rocket",
+      "item.chaotic_creations.eternal_flame_shockwave": "Eternal Flame Shockwave",
+      "item.chaotic_creations.cumbustion_vulpine_world_wide_web_browser": "Combustion Vulpine World Wide Web Browser",
+      "item.minecraft.potion.effect.redstone_vortex": "Redstone Vortex",
+      "item.chaotic_creations.hammerof_might": "Hammer of Might",
+      "itemGroup.tabchaotic_items": "Chaotic Items",
       "item.minecraft.lingering_potion.effect.redstone_conduit": "Lingering Redstone Conduit",
       "item.chaotic_creations.trust": "Trust",
+      "subtitles.heavy_sniper": "Big Gunshot",
       "item.chaotic_creations.e_1": "E 1",
       "item.chaotic_creations.purified_energy": "Purified Energy",
       "item.chaotic_creations.eternal_flame": "Eternal Flame",
       "item.chaotic_creations.chaotic_energy": "Chaotic Energy",
-      "item.chaotic_creations.odinmain": "Odinmain",
       "item.chaotic_creations.odin_spawn_egg": "Odin Spawn Egg",
-      "item.minecraft.splash_potion.effect.redstone_vortex": "Splash Redstone Vortex",
+      "item.chaotic_creations.gadget": "Gadget",
       "effect.redstone_conduit": "Redstone Conduit",
       "item.minecraft.tipped_arrow.effect.redstone_vortex": "Arrow of Redstone Vortex",
-      "item.minecraft.lingering_potion.effect.redstone_vortex": "Lingering Redstone Vortex",
-      "item.minecraft.tipped_arrow.effect.redstone_conduit": "Arrow of Redstone Conduit",
-      "item.chaotic_creations.pistol": "Pistol",
       "item.chaotic_creations.the_viper": "The Viper",
       "item.chaotic_creations.odinlightningattack": "Odinlightningattack",
       "item.chaotic_creations.the_claw": "The Claw",
-      "block.chaotic_creations.chaotic_cluster": "Chaotic Cluster",
       "item.chaotic_creations.food_bar": "Food Bar",
       "item.chaotic_creations.mining_beam": "Mining Beam",
-      "item.minecraft.potion.effect.redstone_conduit": "Redstone Conduit",
       "item.minecraft.splash_potion.effect.redstone_conduit": "Splash Redstone Conduit",
       "entity.chaotic_creations.odin": "Odin",
-      "item.chaotic_creations.mastery_token": "Mastery Token",
-      "item.chaotic_creations.serpents_wrath": "Serpent\u0027s Wrath",
-      "itemGroup.tabchaotic_creations": "Chaotic Creations",
       "item.chaotic_creations.infernals_vengance": "Infernals Vengance",
-      "block.chaotic_creations.chaotic_portal": "Chaotic Portal",
+      "item.chaotic_creations.serpents_wrath": "Serpent\u0027s Wrath",
+      "item.chaotic_creations.corrupt_concentration": "Corrupt Concentration",
       "item.chaotic_creations.mining_beam_laser": "Mining Beam Laser",
-      "item.chaotic_creations.eternal_flame_shockwave": "Eternal Flame Shockwave",
       "effect.redstone_vortex": "Redstone Vortex",
-      "item.chaotic_creations.cumbustion_vulpine_world_wide_web_browser": "Combustion Vulpine World Wide Web Browser",
-      "item.minecraft.potion.effect.redstone_vortex": "Redstone Vortex",
       "item.chaotic_creations.magnumrounds": ".500 Magnum",
-      "itemGroup.tabchaotic_items": "Chaotic Items",
       "block.chaotic_creations.supply_crate": "Supply Crate",
+      "item.chaotic_creations.serpents_projectile": "Serpents Projectile",
       "biome.chaotic_creations.corruption": "Corruption",
       "item.chaotic_creations.combat_knife": "Combat Knife"
     }
@@ -937,5 +1758,5 @@
     "modElementsPackage": "net.mcreator.chaoticcreations",
     "lockBaseModFiles": false
   },
-  "mcreatorVersion": 202100118117
+  "mcreatorVersion": 202100116710
 }

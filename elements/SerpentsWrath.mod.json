@@ -2,9 +2,9 @@
   "_fv": 18,
   "_type": "tool",
   "definition": {
-    "renderType": 0,
+    "renderType": 1,
     "texture": "serpents_wrath",
-    "customModelName": "Normal",
+    "customModelName": "serpentswrath:default",
     "name": "Serpent's Wrath",
     "specialInfo": [
       "Like the bite of a Snake..."
@@ -16,7 +16,7 @@
     "harvestLevel": 1,
     "efficiency": 4.0,
     "attackSpeed": 1.0,
-    "enchantability": 15,
+    "enchantability": 13,
     "damageVsEntity": 9.0,
     "usageCount": 0,
     "blocksAffected": [],

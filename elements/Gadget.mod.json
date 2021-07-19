@@ -1,0 +1,56 @@
+{
+  "_fv": 18,
+  "_type": "gun",
+  "definition": {
+    "renderType": 1,
+    "texture": "no",
+    "customModelName": "gadget:default",
+    "name": "Gadget",
+    "specialInfo": [
+      "A special prototype aquired from the wreckage of a Crashed Borelian Ship",
+      "//WARNING DO NOT POINT AT OR NEAR FRIENDLY FORCES//",
+      "Neither FangTech or Orion Labs are responsible for any damages caused by this product"
+    ],
+    "creativeTab": {
+      "value": "CUSTOM:ChaoticCreations"
+    },
+    "stackSize": 1,
+    "ammoItem": {
+      "value": "CUSTOM:Rocket"
+    },
+    "shootConstantly": false,
+    "usageCount": 0,
+    "actionSound": {
+      "value": "entity.blaze.shoot"
+    },
+    "hasGlow": false,
+    "animation": "none",
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "onRangedItemUsed": {
+      "name": "GadgetRangedItemUsed"
+    },
+    "bulletPower": 5.5,
+    "bulletDamage": 20.0,
+    "bulletKnockback": 5,
+    "bulletParticles": false,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": "CUSTOM:Gadget"
+    },
+    "bulletModel": "Modelgadgetnuke",
+    "customBulletModelTexture": "gadgetnuke.png",
+    "onBulletHitsBlock": {
+      "name": "GadgetBulletHitsBlock"
+    },
+    "onBulletHitsPlayer": {
+      "name": "GadgetBulletHitsBlock"
+    },
+    "onBulletHitsEntity": {
+      "name": "GadgetBulletHitsBlock"
+    },
+    "onBulletFlyingTick": {
+      "name": "GadgetWhileBulletFlyingTick"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "chaotic_creations:custom/serpentswrathadept",
+  "textures": {
+    "0": "chaotic_creations:blocks/serpentswrathadept",
+    "particle": "chaotic_creations:items/serpents_wrath"
+  }
+}
