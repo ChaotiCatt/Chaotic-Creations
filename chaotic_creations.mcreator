@@ -837,7 +837,7 @@
       "name": "Skystone",
       "type": "block",
       "sortid": 54,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "ids": {},
       "registry_name": "skystone"
@@ -846,7 +846,7 @@
       "name": "Skygrass",
       "type": "block",
       "sortid": 55,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "ids": {},
       "registry_name": "skygrass"
@@ -855,7 +855,7 @@
       "name": "SkyLamp1",
       "type": "block",
       "sortid": 56,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "ids": {},
       "registry_name": "sky_lamp_1"
@@ -864,7 +864,7 @@
       "name": "PistolMercenary",
       "type": "mob",
       "sortid": 57,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "ids": {},
       "registry_name": "pistol_mercenary"
@@ -1068,7 +1068,7 @@
       "name": "PurifiedCluster",
       "type": "block",
       "sortid": 73,
-      "compiles": true,
+      "compiles": false,
       "locked_code": false,
       "ids": {},
       "registry_name": "purified_cluster"

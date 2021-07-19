@@ -1,35 +1,85 @@
 
 package net.mcreator.chaoticcreations.entity;
 
-import net.minecraft.block.material.Material;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.fml.network.NetworkHooks;
+import net.minecraftforge.fml.network.FMLPlayMessages;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.world.BiomeLoadingEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.common.MinecraftForge;
+
+import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.gen.Heightmap;
+import net.minecraft.world.biome.MobSpawnInfo;
+import net.minecraft.world.World;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Hand;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.network.IPacket;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.item.SpawnEggItem;
+import net.minecraft.item.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.passive.TameableEntity;
+import net.minecraft.entity.monster.PhantomEntity;
+import net.minecraft.entity.monster.MonsterEntity;
+import net.minecraft.entity.ai.goal.SwimGoal;
+import net.minecraft.entity.ai.goal.RangedAttackGoal;
+import net.minecraft.entity.ai.goal.RandomWalkingGoal;
+import net.minecraft.entity.ai.goal.OwnerHurtTargetGoal;
+import net.minecraft.entity.ai.goal.OwnerHurtByTargetGoal;
+import net.minecraft.entity.ai.goal.NearestAttackableTargetGoal;
+import net.minecraft.entity.ai.goal.LookRandomlyGoal;
+import net.minecraft.entity.ai.goal.HurtByTargetGoal;
+import net.minecraft.entity.ai.goal.FollowOwnerGoal;
+import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.ai.attributes.AttributeModifierMap;
+import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.IRangedAttackMob;
+import net.minecraft.entity.ILivingEntityData;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.EntitySpawnPlacementRegistry;
+import net.minecraft.entity.EntityClassification;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.CreatureAttribute;
+import net.minecraft.entity.AgeableEntity;
+
+import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
+import net.mcreator.chaoticcreations.item.FangTechF612Item;
+import net.mcreator.chaoticcreations.entity.renderer.BRMercenaryRenderer;
+import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
 
 @ChaoticCreationsModElements.ModElement.Tag
 public class BRMercenaryEntity extends ChaoticCreationsModElements.ModElement {
-
 	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.AMBIENT)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new)
 			.size(0.6f, 1.8f)).build("br_mercenary").setRegistryName("br_mercenary");
-
 	public BRMercenaryEntity(ChaoticCreationsModElements instance) {
 		super(instance, 62);
-
 		FMLJavaModLoadingContext.get().getModEventBus().register(new BRMercenaryRenderer.ModelRegisterHandler());
 		FMLJavaModLoadingContext.get().getModEventBus().register(new EntityAttributesRegisterHandler());
-
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	@Override
 	public void initElements() {
 		elements.entities.add(() -> entity);
-
 		elements.items.add(() -> new SpawnEggItem(entity, -1, -16777216, new Item.Properties().group(ChaoticCreationsItemGroup.tab))
 				.setRegistryName("br_mercenary_spawn_egg"));
 	}
 
 	@SubscribeEvent
 	public void addFeatureToBiomes(BiomeLoadingEvent event) {
-
 		event.getSpawns().getSpawner(EntityClassification.AMBIENT).add(new MobSpawnInfo.Spawners(entity, 20, 1, 2));
 	}
 
@@ -37,11 +87,8 @@ public class BRMercenaryEntity extends ChaoticCreationsModElements.ModElement {
 	public void init(FMLCommonSetupEvent event) {
 		EntitySpawnPlacementRegistry.register(entity, EntitySpawnPlacementRegistry.PlacementType.NO_RESTRICTIONS,
 				Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MobEntity::canSpawnOn);
-
 	}
-
 	private static class EntityAttributesRegisterHandler {
-
 		@SubscribeEvent
 		public void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
 			AttributeModifierMap.MutableAttribute ammma = MobEntity.func_233666_p_();
@@ -49,14 +96,11 @@ public class BRMercenaryEntity extends ChaoticCreationsModElements.ModElement {
 			ammma = ammma.createMutableAttribute(Attributes.MAX_HEALTH, 10);
 			ammma = ammma.createMutableAttribute(Attributes.ARMOR, 0);
 			ammma = ammma.createMutableAttribute(Attributes.ATTACK_DAMAGE, 3);
-
 			event.put(entity, ammma.create());
 		}
-
 	}
 
 	public static class CustomEntity extends TameableEntity implements IRangedAttackMob {
-
 		public CustomEntity(FMLPlayMessages.SpawnEntity packet, World world) {
 			this(entity, world);
 		}
@@ -65,9 +109,7 @@ public class BRMercenaryEntity extends ChaoticCreationsModElements.ModElement {
 			super(type, world);
 			experienceValue = 0;
 			setNoAI(false);
-
 			this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(FangTechF612Item.block, (int) (1)));
-
 		}
 
 		@Override
@@ -78,7 +120,6 @@ public class BRMercenaryEntity extends ChaoticCreationsModElements.ModElement {
 		@Override
 		protected void registerGoals() {
 			super.registerGoals();
-
 			this.goalSelector.addGoal(1, new FollowOwnerGoal(this, 1, (float) 10, (float) 5, false));
 			this.goalSelector.addGoal(2, new RandomWalkingGoal(this, 1));
 			this.goalSelector.addGoal(3, new OwnerHurtByTargetGoal(this));
@@ -89,7 +130,6 @@ public class BRMercenaryEntity extends ChaoticCreationsModElements.ModElement {
 			this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, PhantomEntity.class, false, false));
 			this.targetSelector.addGoal(9, new HurtByTargetGoal(this).setCallsForHelp(this.getClass()));
 			this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, MonsterEntity.class, false, false));
-
 			this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.25, 20, 10) {
 				@Override
 				public boolean shouldContinueExecuting() {
@@ -117,7 +157,6 @@ public class BRMercenaryEntity extends ChaoticCreationsModElements.ModElement {
 		public ActionResultType func_230254_b_(PlayerEntity sourceentity, Hand hand) {
 			ItemStack itemstack = sourceentity.getHeldItem(hand);
 			ActionResultType retval = ActionResultType.func_233537_a_(this.world.isRemote());
-
 			Item item = itemstack.getItem();
 			if (itemstack.getItem() instanceof SpawnEggItem) {
 				retval = super.func_230254_b_(sourceentity, hand);
@@ -148,7 +187,6 @@ public class BRMercenaryEntity extends ChaoticCreationsModElements.ModElement {
 					} else {
 						this.world.setEntityState(this, (byte) 6);
 					}
-
 					this.enablePersistence();
 					retval = ActionResultType.func_233537_a_(this.world.isRemote());
 				} else {
@@ -157,7 +195,6 @@ public class BRMercenaryEntity extends ChaoticCreationsModElements.ModElement {
 						this.enablePersistence();
 				}
 			}
-
 			double x = this.getPosX();
 			double y = this.getPosY();
 			double z = this.getPosZ();
@@ -181,13 +218,9 @@ public class BRMercenaryEntity extends ChaoticCreationsModElements.ModElement {
 		public boolean isBreedingItem(ItemStack stack) {
 			if (stack == null)
 				return false;
-
 			if (new ItemStack(Items.GOLD_NUGGET, (int) (1)).getItem() == stack.getItem())
 				return true;
-
 			return false;
 		}
-
 	}
-
 }
