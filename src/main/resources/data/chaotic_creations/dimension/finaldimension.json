@@ -36,7 +36,7 @@
       },
       "biomes": [
         {
-          "biome": "chaotic_creations:deleted_mod_element",
+          "biome": "chaotic_creations:finalbiome",
           "parameters": {
             "temperature": 0,
             "humidity": 0,

@@ -837,7 +837,7 @@
       "name": "Skystone",
       "type": "block",
       "sortid": 54,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "skystone"
@@ -846,7 +846,7 @@
       "name": "Skygrass",
       "type": "block",
       "sortid": 55,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "skygrass"
@@ -855,7 +855,7 @@
       "name": "SkyLamp1",
       "type": "block",
       "sortid": 56,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "sky_lamp_1"
@@ -873,7 +873,7 @@
       "name": "Riflerounds1",
       "type": "item",
       "sortid": 58,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "riflerounds_1"
@@ -989,7 +989,7 @@
       "name": "EternalFlame2D",
       "type": "tool",
       "sortid": 65,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "eternal_flame_2_d"
@@ -1034,7 +1034,7 @@
       "name": "Adepttrust",
       "type": "procedure",
       "sortid": 71,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "adepttrust",
@@ -1602,98 +1602,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "pestilence"
-    },
-    {
-      "name": "BlazenKatanaRightClickedInAir2",
-      "type": "procedure",
-      "sortid": 49,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "blazen_katana_right_clicked_in_air_2",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "BlazenKatanaRightClickedOnBlock",
-      "type": "procedure",
-      "sortid": 47,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "blazen_katana_right_clicked_on_block",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "BlazenKatanaEntitySwingsItem",
-      "type": "procedure",
-      "sortid": 50,
-      "compiles": false,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "blazen_katana_entity_swings_item",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "BlazenKatanaLivingEntityIsHitWithTool",
-      "type": "procedure",
-      "sortid": 48,
-      "compiles": false,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "blazen_katana_living_entity_is_hit_with_tool",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
     }
   ],
   "variable_elements": [

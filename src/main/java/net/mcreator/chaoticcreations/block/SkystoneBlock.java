@@ -1,17 +1,47 @@
 
 package net.mcreator.chaoticcreations.block;
 
+import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
+
+import net.minecraft.world.World;
+import net.minecraft.world.IWorld;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.Direction;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.StateContainer;
+import net.minecraft.state.BooleanProperty;
+import net.minecraft.particles.ParticleTypes;
+import net.minecraft.loot.LootContext;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item;
+import net.minecraft.item.BlockItemUseContext;
+import net.minecraft.item.BlockItem;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.client.Minecraft;
+import net.minecraft.block.material.MaterialColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.IWaterLoggable;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Block;
+
+import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
+import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
+
+import java.util.Random;
+import java.util.List;
+import java.util.Collections;
 
 @ChaoticCreationsModElements.ModElement.Tag
 public class SkystoneBlock extends ChaoticCreationsModElements.ModElement {
-
 	@ObjectHolder("chaotic_creations:skystone")
 	public static final Block block = null;
-
 	public SkystoneBlock(ChaoticCreationsModElements instance) {
 		super(instance, 54);
-
 	}
 
 	@Override
@@ -20,16 +50,11 @@ public class SkystoneBlock extends ChaoticCreationsModElements.ModElement {
 		elements.items
 				.add(() -> new BlockItem(block, new Item.Properties().group(ChaoticCreationsItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
-
 	public static class CustomBlock extends Block implements IWaterLoggable {
-
 		public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0));
-
 			this.setDefaultState(this.stateContainer.getBaseState().with(WATERLOGGED, false));
-
 			setRegistryName("skystone");
 		}
 
@@ -65,7 +90,6 @@ public class SkystoneBlock extends ChaoticCreationsModElements.ModElement {
 
 		@Override
 		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
-
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
@@ -92,7 +116,5 @@ public class SkystoneBlock extends ChaoticCreationsModElements.ModElement {
 					world.addParticle(ParticleTypes.WHITE_ASH, d0, d1, d2, d3, d4, d5);
 				}
 		}
-
 	}
-
 }

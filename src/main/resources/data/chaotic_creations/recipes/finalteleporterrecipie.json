@@ -8,23 +8,23 @@
   ],
   "key": {
     "1": {
-      "item": "chaotic_creations:deleted_mod_element"
+      "item": "chaotic_creations:superconcentrated_chaos"
     },
     "3": {
-      "item": "chaotic_creations:deleted_mod_element"
+      "item": "chaotic_creations:superconcentrated_chaos"
     },
     "4": {
       "item": "chaotic_creations:corrupt_concentration"
     },
     "5": {
-      "item": "chaotic_creations:deleted_mod_element"
+      "item": "chaotic_creations:superconcentrated_chaos"
     },
     "7": {
-      "item": "chaotic_creations:deleted_mod_element"
+      "item": "chaotic_creations:superconcentrated_chaos"
     }
   },
   "result": {
-    "item": "chaotic_creations:deleted_mod_element",
+    "item": "chaotic_creations:final_teleporter",
     "count": 1
   }
 }

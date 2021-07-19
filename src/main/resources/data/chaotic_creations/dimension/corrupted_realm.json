@@ -46,7 +46,7 @@
           }
         },
         {
-          "biome": "chaotic_creations:deleted_mod_element",
+          "biome": "chaotic_creations:deep_corruption",
           "parameters": {
             "temperature": -1,
             "humidity": 1,

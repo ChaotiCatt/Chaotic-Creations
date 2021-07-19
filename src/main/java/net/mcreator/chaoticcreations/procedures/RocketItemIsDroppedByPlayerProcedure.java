@@ -1,11 +1,19 @@
 package net.mcreator.chaoticcreations.procedures;
 
+import net.minecraft.world.World;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.Explosion;
+import net.minecraft.item.ItemStack;
+
+import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
+import net.mcreator.chaoticcreations.ChaoticCreationsMod;
+
+import java.util.Map;
+
 @ChaoticCreationsModElements.ModElement.Tag
 public class RocketItemIsDroppedByPlayerProcedure extends ChaoticCreationsModElements.ModElement {
-
 	public RocketItemIsDroppedByPlayerProcedure(ChaoticCreationsModElements instance) {
 		super(instance, 100);
-
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -34,18 +42,14 @@ public class RocketItemIsDroppedByPlayerProcedure extends ChaoticCreationsModEle
 				ChaoticCreationsMod.LOGGER.warn("Failed to load dependency world for procedure RocketItemIsDroppedByPlayer!");
 			return;
 		}
-
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-
 		if (world instanceof World && !((World) world).isRemote) {
 			((World) world).createExplosion(null, (int) x, (int) y, (int) z, (float) 4, Explosion.Mode.NONE);
 		}
 		((itemstack)).setCount((int) 0);
-
 	}
-
 }

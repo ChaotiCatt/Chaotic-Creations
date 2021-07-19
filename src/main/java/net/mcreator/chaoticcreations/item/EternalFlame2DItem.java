@@ -1,12 +1,35 @@
 
 package net.mcreator.chaoticcreations.item;
 
+import net.minecraftforge.registries.ObjectHolder;
+
+import net.minecraft.world.World;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ActionResult;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.item.SwordItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item;
+import net.minecraft.item.IItemTier;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.client.util.ITooltipFlag;
+
+import net.mcreator.chaoticcreations.procedures.EternalFlameRightClickedInAirProcedure;
+import net.mcreator.chaoticcreations.procedures.EternalFlameLivingEntityIsHitWithToolProcedure;
+import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
+import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
+
+import java.util.Map;
+import java.util.List;
+import java.util.HashMap;
+
 @ChaoticCreationsModElements.ModElement.Tag
 public class EternalFlame2DItem extends ChaoticCreationsModElements.ModElement {
-
 	@ObjectHolder("chaotic_creations:eternal_flame_2_d")
 	public static final Item block = null;
-
 	public EternalFlame2DItem(ChaoticCreationsModElements instance) {
 		super(instance, 65);
 	}
@@ -38,7 +61,6 @@ public class EternalFlame2DItem extends ChaoticCreationsModElements.ModElement {
 				return Ingredient.EMPTY;
 			}
 		}, 3, 1f, new Item.Properties().group(ChaoticCreationsItemGroup.tab).isImmuneToFire()) {
-
 			@Override
 			public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 				super.addInformation(itemstack, world, list, flag);
@@ -55,14 +77,12 @@ public class EternalFlame2DItem extends ChaoticCreationsModElements.ModElement {
 				double z = entity.getPosZ();
 				{
 					Map<String, Object> $_dependencies = new HashMap<>();
-
 					$_dependencies.put("entity", entity);
 					$_dependencies.put("itemstack", itemstack);
 					$_dependencies.put("x", x);
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
-
 					EternalFlameRightClickedInAirProcedure.executeProcedure($_dependencies);
 				}
 				return retval;
@@ -77,16 +97,12 @@ public class EternalFlame2DItem extends ChaoticCreationsModElements.ModElement {
 				World world = entity.world;
 				{
 					Map<String, Object> $_dependencies = new HashMap<>();
-
 					$_dependencies.put("entity", entity);
 					$_dependencies.put("world", world);
-
 					EternalFlameLivingEntityIsHitWithToolProcedure.executeProcedure($_dependencies);
 				}
 				return retval;
 			}
-
 		}.setRegistryName("eternal_flame_2_d"));
 	}
-
 }
