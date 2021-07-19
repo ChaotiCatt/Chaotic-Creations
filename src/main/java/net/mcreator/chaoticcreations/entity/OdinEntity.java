@@ -49,7 +49,9 @@ import java.util.Random;
 
 @ChaoticCreationsModElements.ModElement.Tag
 public class OdinEntity extends ChaoticCreationsModElements.ModElement {
-	public static EntityType entity = null;
+	public static EntityType entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire()
+			.size(0.7999999999999999f, 2f)).build("odin").setRegistryName("odin");
 	public OdinEntity(ChaoticCreationsModElements instance) {
 		super(instance, 41);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new OdinRenderer.ModelRegisterHandler());
@@ -58,9 +60,6 @@ public class OdinEntity extends ChaoticCreationsModElements.ModElement {
 
 	@Override
 	public void initElements() {
-		entity = (EntityType.Builder.<CustomEntity>create(CustomEntity::new, EntityClassification.MONSTER).setShouldReceiveVelocityUpdates(true)
-				.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(CustomEntity::new).immuneToFire().size(0.7999999999999999f, 2f))
-						.build("odin").setRegistryName("odin");
 		elements.entities.add(() -> entity);
 		elements.items.add(() -> new SpawnEggItem(entity, -15263977, -65536, new Item.Properties().group(ChaoticCreationsItemGroup.tab))
 				.setRegistryName("odin_spawn_egg"));

@@ -1,0 +1,17 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "sword_in_a_stone_texture2",
+        "1": "sword_in_a_stone_texture3",
+        "2": "sword_in_a_stone_texture4",
+        "3": "sword_in_a_stone_texture5",
+        "4": "sword_in_a_stone_texture6",
+        "5": "sword_in_a_stone_texture7",
+        "6": "",
+        "missing": ""
+      },
+      "name": "default"
+    }
+  }
+}
