@@ -1,0 +1,24 @@
+{
+  "group": "chaotic_creations",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    " 4 ",
+    "  8"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:gold_nugget"
+    },
+    "4": {
+      "item": "chaotic_creations:riflerounds_1"
+    },
+    "8": {
+      "item": "minecraft:gunpowder"
+    }
+  },
+  "result": {
+    "item": "chaotic_creations:heavy_rifle_round",
+    "count": 1
+  }
+}

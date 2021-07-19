@@ -46,6 +46,8 @@ public class ChaoticCreationsModElements {
 	public final List<Supplier<Enchantment>> enchantments = new ArrayList<>();
 	public static Map<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new HashMap<>();
 	public ChaoticCreationsModElements() {
+		sounds.put(new ResourceLocation("chaotic_creations", "heavy_sniper"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("chaotic_creations", "heavy_sniper")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("chaotic_creations").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

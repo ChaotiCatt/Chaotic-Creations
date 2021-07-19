@@ -1,0 +1,46 @@
+{
+  "_fv": 18,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 6,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Items.GOLD_NUGGET"
+      },
+      {
+        "value": "CUSTOM:Magnumrounds"
+      },
+      {
+        "value": "CUSTOM:Magnumrounds"
+      },
+      {
+        "value": "CUSTOM:Magnumrounds"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:Magnumrounds"
+      },
+      {
+        "value": "CUSTOM:Magnumrounds"
+      },
+      {
+        "value": "CUSTOM:Magnumrounds"
+      },
+      {
+        "value": "Items.GUNPOWDER"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Riflerounds1"
+    },
+    "name": "riflerounds_1recipie",
+    "namespace": "mod"
+  }
+}

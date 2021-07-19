@@ -1,6 +1,8 @@
 package net.mcreator.chaoticcreations.procedures;
 
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.DamageSource;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
@@ -22,5 +24,8 @@ public class LemonFoodEatenProcedure extends ChaoticCreationsModElements.ModElem
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		entity.attackEntityFrom(DamageSource.GENERIC, (float) 99999);
+		if (entity instanceof PlayerEntity && !entity.world.isRemote()) {
+			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("huuueeEEEUUGH"), (true));
+		}
 	}
 }

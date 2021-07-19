@@ -1,0 +1,30 @@
+{
+  "group": "chaotic_creations",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    " 45",
+    " 78"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:gunpowder"
+    },
+    "4": {
+      "item": "minecraft:redstone"
+    },
+    "5": {
+      "item": "minecraft:iron_ingot"
+    },
+    "7": {
+      "item": "minecraft:iron_ingot"
+    },
+    "8": {
+      "item": "minecraft:flint"
+    }
+  },
+  "result": {
+    "item": "chaotic_creations:rocket",
+    "count": 8
+  }
+}

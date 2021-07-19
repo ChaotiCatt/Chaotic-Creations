@@ -1,0 +1,39 @@
+{
+  "group": "chaotic_creations",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:gold_nugget"
+    },
+    "1": {
+      "item": "chaotic_creations:magnumrounds"
+    },
+    "2": {
+      "item": "chaotic_creations:magnumrounds"
+    },
+    "3": {
+      "item": "chaotic_creations:magnumrounds"
+    },
+    "5": {
+      "item": "chaotic_creations:magnumrounds"
+    },
+    "6": {
+      "item": "chaotic_creations:magnumrounds"
+    },
+    "7": {
+      "item": "chaotic_creations:magnumrounds"
+    },
+    "8": {
+      "item": "minecraft:gunpowder"
+    }
+  },
+  "result": {
+    "item": "chaotic_creations:riflerounds_1",
+    "count": 6
+  }
+}

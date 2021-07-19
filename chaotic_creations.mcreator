@@ -1355,6 +1355,223 @@
           }
         ]
       }
+    },
+    {
+      "name": "TotemRecipie",
+      "type": "recipe",
+      "sortid": 94,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "totem_recipie"
+    },
+    {
+      "name": "GadgetRangedItemUsed",
+      "type": "procedure",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gadget_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Gadget",
+      "type": "gun",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gadget"
+    },
+    {
+      "name": "GadgetBulletHitsBlock",
+      "type": "procedure",
+      "sortid": 96,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gadget_bullet_hits_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GadgetWhileBulletFlyingTick",
+      "type": "procedure",
+      "sortid": 97,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "gadget_while_bullet_flying_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rocket",
+      "type": "item",
+      "sortid": 98,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rocket"
+    },
+    {
+      "name": "Rocketrecipie",
+      "type": "recipe",
+      "sortid": 99,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rocketrecipie"
+    },
+    {
+      "name": "RocketItemIsDroppedByPlayer",
+      "type": "procedure",
+      "sortid": 100,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "rocket_item_is_dropped_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "EternityBulletHitsLivingEntity",
+      "type": "procedure",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternity_bullet_hits_living_entity",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Eternity",
+      "type": "gun",
+      "sortid": 101,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "eternity"
+    },
+    {
+      "name": "Riflerounds1recipie",
+      "type": "recipe",
+      "sortid": 102,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "riflerounds_1recipie"
+    },
+    {
+      "name": "HeavyRifleRound",
+      "type": "item",
+      "sortid": 103,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "heavy_rifle_round"
+    },
+    {
+      "name": "HeavyRIfleRoundRecipie",
+      "type": "recipe",
+      "sortid": 104,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "heavy_r_ifle_round_recipie"
     }
   ],
   "variable_elements": [
@@ -1365,7 +1582,16 @@
       "value": "0"
     }
   ],
-  "sound_elements": [],
+  "sound_elements": [
+    {
+      "name": "heavy_sniper",
+      "files": [
+        "heavy_sniper"
+      ],
+      "category": "master",
+      "subtitle": "Big Gunshot"
+    }
+  ],
   "language_map": {
     "en_us": {
       "advancements.trustadeptcompleted.title": "Redstone and Metal",
@@ -1393,18 +1619,21 @@
       "block.chaotic_creations.chaotic_portal": "Chaotic Portal",
       "itemGroup.tabchaotic_creations": "Chaotic Creations",
       "item.chaotic_creations.fang_tech_f_612": "FangTech F612",
+      "item.chaotic_creations.rocket": "Rocket",
       "advancements.it_begins.descr": "Step into the world of Chaotic Creations.",
+      "item.chaotic_creations.eternity": "Eternity",
       "entity.chaotic_creations.corrupted": "Corrupted",
       "item.chaotic_creations.eternal_flame_shockwave": "Eternal Flame Shockwave",
       "item.chaotic_creations.cumbustion_vulpine_world_wide_web_browser": "Combustion Vulpine World Wide Web Browser",
       "entity.chaotic_creations.br_mercenary": "BR Mercenary",
       "item.minecraft.potion.effect.redstone_vortex": "Redstone Vortex",
-      "item.chaotic_creations.hammerof_might": "Hammerof Might",
+      "item.chaotic_creations.hammerof_might": "Hammer of Might",
       "itemGroup.tabchaotic_items": "Chaotic Items",
       "item.minecraft.lingering_potion.effect.redstone_conduit": "Lingering Redstone Conduit",
       "item.chaotic_creations.corrupted_realm": "Corrupted Energy",
       "item.chaotic_creations.trust": "Trust",
       "block.chaotic_creations.skygrass": "Skygrass",
+      "subtitles.heavy_sniper": "Big Gunshot",
       "block.chaotic_creations.skystone": "Skystone",
       "item.chaotic_creations.riflerounds_1": "Medium rifle rounds",
       "item.chaotic_creations.e_1": "E 1",
@@ -1414,8 +1643,10 @@
       "item.chaotic_creations.chaotic_energy": "Chaotic Energy",
       "item.chaotic_creations.infinite_smg": "Infinite Smg",
       "block.chaotic_creations.purified_cluster": "Purified Cluster",
+      "item.chaotic_creations.heavy_rifle_round": "Heavy Rifle Round",
       "item.chaotic_creations.odin_spawn_egg": "Odin Spawn Egg",
       "biome.chaotic_creations.finalbiome": "Finalbiome",
+      "item.chaotic_creations.gadget": "Gadget",
       "effect.redstone_conduit": "Redstone Conduit",
       "item.minecraft.tipped_arrow.effect.redstone_vortex": "Arrow of Redstone Vortex",
       "item.chaotic_creations.br_mercenary_spawn_egg": "BR Mercenary Spawn Egg",

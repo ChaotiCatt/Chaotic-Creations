@@ -1,0 +1,7 @@
+{
+  "parent": "chaotic_creations:custom/gadget",
+  "textures": {
+    "0": "chaotic_creations:blocks/gadget",
+    "particle": "chaotic_creations:items/no"
+  }
+}

@@ -1,1 +1,12 @@
-{}
+{
+  "heavy_sniper": {
+    "category": "master",
+    "subtitle": "subtitles.heavy_sniper",
+    "sounds": [
+      {
+        "name": "chaotic_creations:heavy_sniper",
+        "stream": false
+      }
+    ]
+  }
+}
