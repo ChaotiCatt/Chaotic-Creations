@@ -1,27 +1,11 @@
 package net.mcreator.chaoticcreations.procedures;
 
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
-
-import net.minecraft.world.IWorld;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.chaoticcreations.item.Riflerounds1Item;
-import net.mcreator.chaoticcreations.item.BasicbulletgunItem;
-import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
-import net.mcreator.chaoticcreations.ChaoticCreationsMod;
-
-import java.util.Random;
-import java.util.Map;
-
 @ChaoticCreationsModElements.ModElement.Tag
 public class DKLNARightClickedInAirProcedure extends ChaoticCreationsModElements.ModElement {
+
 	public DKLNARightClickedInAirProcedure(ChaoticCreationsModElements instance) {
 		super(instance, 58);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -35,8 +19,10 @@ public class DKLNARightClickedInAirProcedure extends ChaoticCreationsModElements
 				ChaoticCreationsMod.LOGGER.warn("Failed to load dependency world for procedure DKLNARightClickedInAir!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
 		IWorld world = (IWorld) dependencies.get("world");
+
 		if (((entity instanceof PlayerEntity)
 				? ((PlayerEntity) entity).inventory.hasItemStack(new ItemStack(Riflerounds1Item.block, (int) (1)))
 				: false)) {
@@ -46,9 +32,11 @@ public class DKLNARightClickedInAirProcedure extends ChaoticCreationsModElements
 						((PlayerEntity) entity).container.func_234641_j_());
 			}
 			new Object() {
+
 				private int ticks = 0;
 				private float waitTicks;
 				private IWorld world;
+
 				public void start(IWorld world, int waitTicks) {
 					this.waitTicks = waitTicks;
 					MinecraftForge.EVENT_BUS.register(this);
@@ -72,9 +60,11 @@ public class DKLNARightClickedInAirProcedure extends ChaoticCreationsModElements
 						}
 					}
 					new Object() {
+
 						private int ticks = 0;
 						private float waitTicks;
 						private IWorld world;
+
 						public void start(IWorld world, int waitTicks) {
 							this.waitTicks = waitTicks;
 							MinecraftForge.EVENT_BUS.register(this);
@@ -98,9 +88,11 @@ public class DKLNARightClickedInAirProcedure extends ChaoticCreationsModElements
 								}
 							}
 							new Object() {
+
 								private int ticks = 0;
 								private float waitTicks;
 								private IWorld world;
+
 								public void start(IWorld world, int waitTicks) {
 									this.waitTicks = waitTicks;
 									MinecraftForge.EVENT_BUS.register(this);
@@ -126,13 +118,20 @@ public class DKLNARightClickedInAirProcedure extends ChaoticCreationsModElements
 									}
 									MinecraftForge.EVENT_BUS.unregister(this);
 								}
+
 							}.start(world, (int) 5);
+
 							MinecraftForge.EVENT_BUS.unregister(this);
 						}
+
 					}.start(world, (int) 5);
+
 					MinecraftForge.EVENT_BUS.unregister(this);
 				}
+
 			}.start(world, (int) 5);
 		}
+
 	}
+
 }

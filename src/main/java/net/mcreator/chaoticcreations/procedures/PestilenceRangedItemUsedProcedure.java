@@ -1,18 +1,11 @@
 package net.mcreator.chaoticcreations.procedures;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
-import net.mcreator.chaoticcreations.ChaoticCreationsMod;
-
-import java.util.Map;
-
 @ChaoticCreationsModElements.ModElement.Tag
 public class PestilenceRangedItemUsedProcedure extends ChaoticCreationsModElements.ModElement {
+
 	public PestilenceRangedItemUsedProcedure(ChaoticCreationsModElements instance) {
 		super(instance, 105);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -26,9 +19,13 @@ public class PestilenceRangedItemUsedProcedure extends ChaoticCreationsModElemen
 				ChaoticCreationsMod.LOGGER.warn("Failed to load dependency itemstack for procedure PestilenceRangedItemUsed!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
+
 		if (entity instanceof PlayerEntity)
 			((PlayerEntity) entity).getCooldownTracker().setCooldown(((itemstack)).getItem(), (int) 1200);
+
 	}
+
 }

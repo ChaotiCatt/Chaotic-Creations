@@ -1,0 +1,53 @@
+package net.mcreator.chaoticcreations.procedures;
+
+@ChaoticCreationsModElements.ModElement.Tag
+public class BlazenKatanaEntitySwingsItemProcedure extends ChaoticCreationsModElements.ModElement {
+
+	public BlazenKatanaEntitySwingsItemProcedure(ChaoticCreationsModElements instance) {
+		super(instance, 50);
+
+	}
+
+	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("x") == null) {
+			if (!dependencies.containsKey("x"))
+				ChaoticCreationsMod.LOGGER.warn("Failed to load dependency x for procedure BlazenKatanaEntitySwingsItem!");
+			return;
+		}
+		if (dependencies.get("y") == null) {
+			if (!dependencies.containsKey("y"))
+				ChaoticCreationsMod.LOGGER.warn("Failed to load dependency y for procedure BlazenKatanaEntitySwingsItem!");
+			return;
+		}
+		if (dependencies.get("z") == null) {
+			if (!dependencies.containsKey("z"))
+				ChaoticCreationsMod.LOGGER.warn("Failed to load dependency z for procedure BlazenKatanaEntitySwingsItem!");
+			return;
+		}
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				ChaoticCreationsMod.LOGGER.warn("Failed to load dependency world for procedure BlazenKatanaEntitySwingsItem!");
+			return;
+		}
+
+		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
+		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
+		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
+		IWorld world = (IWorld) dependencies.get("world");
+
+		if (world instanceof World && !world.isRemote()) {
+			((World) world).playSound(null, new BlockPos((int) x, (int) y, (int) z),
+					(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.blaze.ambient")),
+					SoundCategory.NEUTRAL, (float) 1, (float) 1);
+		} else {
+			((World) world).playSound(x, y, z,
+					(net.minecraft.util.SoundEvent) ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.blaze.ambient")),
+					SoundCategory.NEUTRAL, (float) 1, (float) 1, false);
+		}
+		if (world instanceof ServerWorld) {
+			((ServerWorld) world).spawnParticle(ParticleTypes.FLAME, x, y, z, (int) 5, 3, 3, 3, 1);
+		}
+
+	}
+
+}
