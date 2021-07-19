@@ -1,24 +1,41 @@
 
 package net.mcreator.chaoticcreations.item;
 
+import net.minecraftforge.registries.ObjectHolder;
+
+import net.minecraft.world.World;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ActionResult;
+import net.minecraft.item.Rarity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.block.BlockState;
+
+import net.mcreator.chaoticcreations.procedures.FinalTeleporterRightClickedInAirProcedure;
+import net.mcreator.chaoticcreations.itemgroup.ChaoticCreationsItemGroup;
+import net.mcreator.chaoticcreations.ChaoticCreationsModElements;
+
+import java.util.Map;
+import java.util.List;
+import java.util.HashMap;
+
 @ChaoticCreationsModElements.ModElement.Tag
 public class FinalTeleporterItem extends ChaoticCreationsModElements.ModElement {
-
 	@ObjectHolder("chaotic_creations:final_teleporter")
 	public static final Item block = null;
-
 	public FinalTeleporterItem(ChaoticCreationsModElements instance) {
 		super(instance, 78);
-
 	}
 
 	@Override
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
-
 	public static class ItemCustom extends Item {
-
 		public ItemCustom() {
 			super(new Item.Properties().group(ChaoticCreationsItemGroup.tab).maxStackSize(64).rarity(Rarity.EPIC));
 			setRegistryName("final_teleporter");
@@ -52,17 +69,12 @@ public class FinalTeleporterItem extends ChaoticCreationsModElements.ModElement 
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
-
 				$_dependencies.put("entity", entity);
-
 				FinalTeleporterRightClickedInAirProcedure.executeProcedure($_dependencies);
 			}
 			return ar;
 		}
-
 	}
-
 }
