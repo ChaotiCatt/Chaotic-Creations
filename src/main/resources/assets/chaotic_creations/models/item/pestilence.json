@@ -1,0 +1,7 @@
+{
+  "parent": "chaotic_creations:custom/pestilence",
+  "textures": {
+    "0": "chaotic_creations:blocks/pestilence",
+    "particle": "chaotic_creations:items/no"
+  }
+}

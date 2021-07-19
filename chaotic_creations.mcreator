@@ -1572,6 +1572,36 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "heavy_r_ifle_round_recipie"
+    },
+    {
+      "name": "PestilenceRangedItemUsed",
+      "type": "procedure",
+      "sortid": 105,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pestilence_ranged_item_used",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Pestilence",
+      "type": "gun",
+      "sortid": 105,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pestilence"
     }
   ],
   "variable_elements": [
@@ -1676,6 +1706,7 @@
       "item.chaotic_creations.viewer_spawn_egg": "Viewer Spawn Egg",
       "item.chaotic_creations.serpents_projectile": "Serpents Projectile",
       "biome.chaotic_creations.corruption": "Corruption",
+      "item.chaotic_creations.pestilence": "Pestilence",
       "item.chaotic_creations.combat_knife": "Combat Knife"
     }
   },
